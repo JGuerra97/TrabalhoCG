@@ -87,20 +87,32 @@ public class TelaPrincipal extends JFrame{
         
         getContentPane().removeAll();
         
+        JPanel container = new JPanel();
+        container.setLayout(new BoxLayout(container, BoxLayout.Y_AXIS));
+        
         JPanel panel = new JPanel();
         JButton botaoa = new JButton("A2");
         JButton botaob = new JButton("B");
         JButton botaoc = new JButton("C");
-        
     
-        panel.add(botaoa);
-        panel.add(botaob);
-        panel.add(botaoc);
-        getContentPane().add(panel);
+        panel.setLayout( new FlowLayout() );
+        panel.setPreferredSize( new Dimension( 100, 100 ) );
+        panel.setMinimumSize( new Dimension( 20, 50 ) );
+        panel.add(botaoa, BorderLayout.WEST);      
+        panel.add(botaob, BorderLayout.CENTER);
+        panel.add(botaoc, BorderLayout.EAST);
+        
+        container.add(panel);
+        JPanel panel2 = new Nivel();
+        panel2.setLayout( new BorderLayout() );
+        panel2.setPreferredSize( new Dimension( 600, 100 ) );
+        panel2.setMinimumSize( new Dimension( 500, 100 ) );
+        container.add(panel2);      
+        getContentPane().add(container);
         revalidate();
         repaint();
         
-        botaoa.addActionListener(new ActionListener(){
+        botaob.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent e){
                 fase3();
@@ -112,22 +124,33 @@ public class TelaPrincipal extends JFrame{
     public void fase3(){
         
         getContentPane().removeAll();
-       
+        
+        JPanel container = new JPanel();
+        container.setLayout(new BoxLayout(container, BoxLayout.Y_AXIS));
+        
         JPanel panel = new JPanel();
         JButton botaoa = new JButton("A3");
         JButton botaob = new JButton("B");
         JButton botaoc = new JButton("C");
         
+        panel.setLayout( new FlowLayout() );
+        panel.setPreferredSize( new Dimension( 100, 100 ) );
+        panel.setMinimumSize( new Dimension( 20, 50 ) );
+        panel.add(botaoa, BorderLayout.WEST);      
+        panel.add(botaob, BorderLayout.CENTER);
+        panel.add(botaoc, BorderLayout.EAST);
         
-        getContentPane().add(panel);
-        panel.add(botaoa);
-        panel.add(botaob);
-        panel.add(botaoc);
-        getContentPane().add(panel);
+        container.add(panel);
+        JPanel panel2 = new Nivel();
+        panel2.setLayout( new BorderLayout() );
+        panel2.setPreferredSize( new Dimension( 600, 100 ) );
+        panel2.setMinimumSize( new Dimension( 500, 100 ) );
+        container.add(panel2);      
+        getContentPane().add(container);        
         revalidate();
         repaint();
         
-        botaoa.addActionListener(new ActionListener(){
+        botaoc.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent e){
                 fase1();
