@@ -1,5 +1,20 @@
 package comp_graf;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import javax.swing.JButton;
+
+public class Main{
+    
+    public static void main(String[] args) {
+        
+        TelaPrincipal tela = new TelaPrincipal();
+
+    }
+    
+}
+
+/*
 import java.awt.Graphics;
 import javax.swing.*;
 
@@ -28,5 +43,6 @@ public class Main extends JPanel {
         janela.getContentPane().add(new Main());
         janela.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         janela.setResizable(false);
-    }
+    
 }
+}*/
