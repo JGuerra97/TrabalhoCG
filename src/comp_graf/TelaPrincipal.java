@@ -79,7 +79,7 @@ public class TelaPrincipal extends JFrame {
         botaoa.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent e){     
-                fimDeJogo();
+                fase2();
             }
         });
         botaob.addActionListener(new ActionListener(){
