@@ -116,6 +116,39 @@ public class Nivel extends JPanel {
                 trapezio.reflexaoY(365);
                 trapezio.translacao(0, 250);
                 trapezio.desenhar(g);
+                
+                break;
+                
+            case 3:
+                break;
+            
+        
+            case 4:
+                break;
+            
+        
+            case 5:
+                break;
+            
+        
+            case 6:
+                break;
+            
+        
+            case 7:
+                break;
+            
+        
+            case 8:
+                break;
+            
+        
+            case 9:
+                break;
+            
+        
+            case 10:
+                break;
             
         
             default:

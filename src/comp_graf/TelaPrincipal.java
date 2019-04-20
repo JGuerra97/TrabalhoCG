@@ -79,7 +79,7 @@ public class TelaPrincipal extends JFrame {
         botaoa.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent e){     
-                fase2();
+                fimDeJogo();
             }
         });
         botaob.addActionListener(new ActionListener(){
@@ -183,11 +183,12 @@ public class TelaPrincipal extends JFrame {
         getContentPane().add(container);
         revalidate();
         repaint();
-        System.out.println("Resultado = " + resultado);
-        botaoc.addActionListener(new ActionListener() {
+        
+        botaoa.addActionListener(new ActionListener() {
             @Override
-            public void actionPerformed(ActionEvent e) {              
-//                fase4();
+            public void actionPerformed(ActionEvent e) {                
+                resultado -= 1;            
+                fase1();
             }
         });
         
@@ -199,10 +200,417 @@ public class TelaPrincipal extends JFrame {
             }
         });
         
+        botaoc.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {              
+                fase4();
+            }
+        });
+    }
+    
+    public void fase4() {
+
+        getContentPane().removeAll();
+
+        JPanel container = new JPanel();
+        container.setLayout(new BoxLayout(container, BoxLayout.Y_AXIS));
+
+        JPanel panel = new JPanel();
+        JButton botaoa = new JButton("A");
+        JButton botaob = new JButton("B");
+        JButton botaoc = new JButton("C");
+
+        panel.setLayout(new FlowLayout());
+        panel.setPreferredSize(new Dimension(100, 100));
+        panel.setMinimumSize(new Dimension(20, 50));
+        panel.add(botaoa, BorderLayout.WEST);
+        panel.add(botaob, BorderLayout.CENTER);
+        panel.add(botaoc, BorderLayout.EAST);
+
+        container.add(panel);
+        Nivel nivel = new Nivel();
+        nivel.setFase(4);
+        JPanel panel2 = nivel;
+        panel2.setLayout(new BorderLayout());
+        panel2.setPreferredSize(new Dimension(600, 100));
+        panel2.setMinimumSize(new Dimension(500, 100));
+        container.add(panel2);
+        getContentPane().add(container);
+        revalidate();
+        repaint();
+        
         botaoa.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {                
                 resultado -= 1;            
+                fase1();
+            }
+        });
+        
+        botaob.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {              
+                fase5();
+            }
+        });
+        
+        botaoc.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {              
+                resultado -= 1;
+                fase1();
+            }
+        });
+    }
+    
+    public void fase5() {
+
+        getContentPane().removeAll();
+
+        JPanel container = new JPanel();
+        container.setLayout(new BoxLayout(container, BoxLayout.Y_AXIS));
+
+        JPanel panel = new JPanel();
+        JButton botaoa = new JButton("A");
+        JButton botaob = new JButton("B");
+        JButton botaoc = new JButton("C");
+
+        panel.setLayout(new FlowLayout());
+        panel.setPreferredSize(new Dimension(100, 100));
+        panel.setMinimumSize(new Dimension(20, 50));
+        panel.add(botaoa, BorderLayout.WEST);
+        panel.add(botaob, BorderLayout.CENTER);
+        panel.add(botaoc, BorderLayout.EAST);
+
+        container.add(panel);
+        Nivel nivel = new Nivel();
+        nivel.setFase(5);
+        JPanel panel2 = nivel;
+        panel2.setLayout(new BorderLayout());
+        panel2.setPreferredSize(new Dimension(600, 100));
+        panel2.setMinimumSize(new Dimension(500, 100));
+        container.add(panel2);
+        getContentPane().add(container);
+        revalidate();
+        repaint();
+        
+        botaoa.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {                
+                fase6();
+            }
+        });
+        
+        botaob.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {              
+                resultado -= 1;
+                fase1();
+            }
+        });
+        
+        botaoc.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {              
+                resultado -= 1;            
+                fase1();
+            }
+        });
+    }
+    
+    public void fase6() {
+
+        getContentPane().removeAll();
+
+        JPanel container = new JPanel();
+        container.setLayout(new BoxLayout(container, BoxLayout.Y_AXIS));
+
+        JPanel panel = new JPanel();
+        JButton botaoa = new JButton("A");
+        JButton botaob = new JButton("B");
+        JButton botaoc = new JButton("C");
+
+        panel.setLayout(new FlowLayout());
+        panel.setPreferredSize(new Dimension(100, 100));
+        panel.setMinimumSize(new Dimension(20, 50));
+        panel.add(botaoa, BorderLayout.WEST);
+        panel.add(botaob, BorderLayout.CENTER);
+        panel.add(botaoc, BorderLayout.EAST);
+
+        container.add(panel);
+        Nivel nivel = new Nivel();
+        nivel.setFase(6);
+        JPanel panel2 = nivel;
+        panel2.setLayout(new BorderLayout());
+        panel2.setPreferredSize(new Dimension(600, 100));
+        panel2.setMinimumSize(new Dimension(500, 100));
+        container.add(panel2);
+        getContentPane().add(container);
+        revalidate();
+        repaint();
+        
+        botaoa.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {                
+                resultado -= 1;
+                fase1();
+            }
+        });
+        
+        botaob.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {              
+                fase7();
+            }
+        });
+        
+        botaoc.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {              
+                resultado -= 1;            
+                fase1();
+            }
+        });
+    }
+    
+    public void fase7() {
+
+        getContentPane().removeAll();
+
+        JPanel container = new JPanel();
+        container.setLayout(new BoxLayout(container, BoxLayout.Y_AXIS));
+
+        JPanel panel = new JPanel();
+        JButton botaoa = new JButton("A");
+        JButton botaob = new JButton("B");
+        JButton botaoc = new JButton("C");
+
+        panel.setLayout(new FlowLayout());
+        panel.setPreferredSize(new Dimension(100, 100));
+        panel.setMinimumSize(new Dimension(20, 50));
+        panel.add(botaoa, BorderLayout.WEST);
+        panel.add(botaob, BorderLayout.CENTER);
+        panel.add(botaoc, BorderLayout.EAST);
+
+        container.add(panel);
+        Nivel nivel = new Nivel();
+        nivel.setFase(7);
+        JPanel panel2 = nivel;
+        panel2.setLayout(new BorderLayout());
+        panel2.setPreferredSize(new Dimension(600, 100));
+        panel2.setMinimumSize(new Dimension(500, 100));
+        container.add(panel2);
+        getContentPane().add(container);
+        revalidate();
+        repaint();
+        
+        botaoa.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {                
+                resultado -= 1;            
+                fase1();
+            }
+        });
+        
+        botaob.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {              
+                resultado -= 1;
+                fase1();
+            }
+        });
+        
+        botaoc.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {              
+                fase8();
+            }
+        });
+    }
+    
+    public void fase8() {
+
+        getContentPane().removeAll();
+
+        JPanel container = new JPanel();
+        container.setLayout(new BoxLayout(container, BoxLayout.Y_AXIS));
+
+        JPanel panel = new JPanel();
+        JButton botaoa = new JButton("A");
+        JButton botaob = new JButton("B");
+        JButton botaoc = new JButton("C");
+
+        panel.setLayout(new FlowLayout());
+        panel.setPreferredSize(new Dimension(100, 100));
+        panel.setMinimumSize(new Dimension(20, 50));
+        panel.add(botaoa, BorderLayout.WEST);
+        panel.add(botaob, BorderLayout.CENTER);
+        panel.add(botaoc, BorderLayout.EAST);
+
+        container.add(panel);
+        Nivel nivel = new Nivel();
+        nivel.setFase(8);
+        JPanel panel2 = nivel;
+        panel2.setLayout(new BorderLayout());
+        panel2.setPreferredSize(new Dimension(600, 100));
+        panel2.setMinimumSize(new Dimension(500, 100));
+        container.add(panel2);
+        getContentPane().add(container);
+        revalidate();
+        repaint();
+        
+        botaoa.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {                
+                fase9();
+            }
+        });
+        
+        botaob.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {              
+                resultado -= 1;
+                fase1();
+            }
+        });
+        
+        botaoc.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {              
+                resultado -= 1;            
+                fase1();
+            }
+        });
+    }
+    
+    public void fase9() {
+
+        getContentPane().removeAll();
+
+        JPanel container = new JPanel();
+        container.setLayout(new BoxLayout(container, BoxLayout.Y_AXIS));
+
+        JPanel panel = new JPanel();
+        JButton botaoa = new JButton("A");
+        JButton botaob = new JButton("B");
+        JButton botaoc = new JButton("C");
+
+        panel.setLayout(new FlowLayout());
+        panel.setPreferredSize(new Dimension(100, 100));
+        panel.setMinimumSize(new Dimension(20, 50));
+        panel.add(botaoa, BorderLayout.WEST);
+        panel.add(botaob, BorderLayout.CENTER);
+        panel.add(botaoc, BorderLayout.EAST);
+
+        container.add(panel);
+        Nivel nivel = new Nivel();
+        nivel.setFase(9);
+        JPanel panel2 = nivel;
+        panel2.setLayout(new BorderLayout());
+        panel2.setPreferredSize(new Dimension(600, 100));
+        panel2.setMinimumSize(new Dimension(500, 100));
+        container.add(panel2);
+        getContentPane().add(container);
+        revalidate();
+        repaint();
+        
+        botaoa.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {                
+                resultado -= 1;
+                fase1();
+            }
+        });
+        
+        botaob.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {              
+                fase10();
+            }
+        });
+        
+        botaoc.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {              
+                resultado -= 1;            
+                fase1();
+            }
+        });
+    }
+    
+    public void fase10() {
+
+        getContentPane().removeAll();
+
+        JPanel container = new JPanel();
+        container.setLayout(new BoxLayout(container, BoxLayout.Y_AXIS));
+
+        JPanel panel = new JPanel();
+        JButton botaoa = new JButton("A");
+        JButton botaob = new JButton("B");
+        JButton botaoc = new JButton("C");
+
+        panel.setLayout(new FlowLayout());
+        panel.setPreferredSize(new Dimension(100, 100));
+        panel.setMinimumSize(new Dimension(20, 50));
+        panel.add(botaoa, BorderLayout.WEST);
+        panel.add(botaob, BorderLayout.CENTER);
+        panel.add(botaoc, BorderLayout.EAST);
+
+        container.add(panel);
+        Nivel nivel = new Nivel();
+        nivel.setFase(10);
+        JPanel panel2 = nivel;
+        panel2.setLayout(new BorderLayout());
+        panel2.setPreferredSize(new Dimension(600, 100));
+        panel2.setMinimumSize(new Dimension(500, 100));
+        container.add(panel2);
+        getContentPane().add(container);
+        revalidate();
+        repaint();
+        
+        botaoa.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {                
+                resultado -= 1;            
+                fase1();
+            }
+        });
+        
+        botaob.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {              
+                resultado -= 1;
+                fase1();
+            }
+        });
+        
+        botaoc.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {              
+                fimDeJogo();
+            }
+        });
+    }
+    
+    public void fimDeJogo() {
+        
+        System.out.println("Resultado: " + resultado);
+        resultado = 10;
+        
+        getContentPane().removeAll();
+
+        JPanel panel = new JPanel();
+        
+        JButton botao = new JButton("Recomeçar");
+        botao.setBounds(50, 50, 200, 200);
+        panel.add(botao);
+
+        revalidate();
+        repaint();
+        botao.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {              
                 fase1();
             }
         });
