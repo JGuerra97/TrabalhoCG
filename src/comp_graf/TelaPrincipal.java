@@ -15,29 +15,13 @@ import java.util.ArrayList;
 import javax.swing.GroupLayout.Group;
 
 public class TelaPrincipal extends JFrame {
-    ArrayList<Fase> fases = new ArrayList();
     Graphics g;
     private int resultado = 10; //Place Holder para o resultado final
     
 
-    public Fase getfase(int i) {
-        return fases.get(i);
-    }
-
     public TelaPrincipal() {
 
         super("TESTE DE QI");
-        
-        fases.add(new Fase());
-        fases.add(new Fase());
-        fases.add(new Fase());
-        fases.add(new Fase());
-        fases.add(new Fase());
-        fases.add(new Fase());
-        fases.add(new Fase());
-        fases.add(new Fase());
-        fases.add(new Fase());
-        fases.add(new Fase());
 
         JPanel panel = new JPanel();
         this.add(panel);
@@ -80,9 +64,9 @@ public class TelaPrincipal extends JFrame {
         panel.add(botaoc, BorderLayout.EAST);
         
         container.add(panel);
-        Nivel nivel1= new Nivel();
-        nivel1.setFase(1);
-        JPanel panel2 = nivel1;
+        Nivel nivel= new Nivel();
+        nivel.setFase(1);
+        JPanel panel2 = nivel;
         panel2.setLayout( new BorderLayout() );
         panel2.setPreferredSize( new Dimension( 600, 100 ) );
         panel2.setMinimumSize( new Dimension( 500, 100 ) );
@@ -102,14 +86,14 @@ public class TelaPrincipal extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e){
                 resultado -= 1;
-                fase2();
+                fase1();
             }
         });
         botaoc.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent e){             
                 resultado -= 1;
-                fase2();
+                fase1();
             }
         });
     }
@@ -133,7 +117,9 @@ public class TelaPrincipal extends JFrame {
         panel.add(botaoc, BorderLayout.EAST);
 
         container.add(panel);
-        JPanel panel2 = new Nivel();
+        Nivel nivel = new Nivel();
+        nivel.setFase(2);
+        JPanel panel2 = nivel;
         panel2.setLayout(new BorderLayout());
         panel2.setPreferredSize(new Dimension(600, 100));
         panel2.setMinimumSize(new Dimension(500, 100));
@@ -145,7 +131,8 @@ public class TelaPrincipal extends JFrame {
         botaob.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                fase3();
+                resultado -= 1;
+                fase1();
             }
         });
         
@@ -153,14 +140,13 @@ public class TelaPrincipal extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 resultado -= 1;
-                fase3();
+                fase1();
             }
         });
         
         botaoc.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                resultado -= 1;
                 fase3();
             }
         });
@@ -187,7 +173,9 @@ public class TelaPrincipal extends JFrame {
         panel.add(botaoc, BorderLayout.EAST);
 
         container.add(panel);
-        JPanel panel2 = new Nivel();
+        Nivel nivel = new Nivel();
+        nivel.setFase(3);
+        JPanel panel2 = nivel;
         panel2.setLayout(new BorderLayout());
         panel2.setPreferredSize(new Dimension(600, 100));
         panel2.setMinimumSize(new Dimension(500, 100));
@@ -195,11 +183,11 @@ public class TelaPrincipal extends JFrame {
         getContentPane().add(container);
         revalidate();
         repaint();
-        System.out.println("Resultado = "+resultado);
+        System.out.println("Resultado = " + resultado);
         botaoc.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {              
-                fase1();  // fase 1
+//                fase4();
             }
         });
         
@@ -207,7 +195,7 @@ public class TelaPrincipal extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {              
                 resultado -= 1;
-                fase1();  // fase 1
+                fase1();
             }
         });
         
@@ -215,7 +203,7 @@ public class TelaPrincipal extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {                
                 resultado -= 1;            
-                fase1();  // fase 1
+                fase1();
             }
         });
     }

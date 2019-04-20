@@ -64,11 +64,11 @@ public class Poligono {
     }
     
     public void reflexaoY(int referenciay){
-        this.translacao(- referenciay, 0);
+        this.translacao(0, - referenciay);
         for(Vertice v : vertices){
             v.y = - v.y;
         }
-        this.translacao(referenciay, 0);
+        this.translacao(0, referenciay);
     }
     
     public void desenhar(Graphics g){
