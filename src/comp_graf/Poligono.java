@@ -77,5 +77,8 @@ public class Poligono {
         }
         g.drawLine(vertices[this.nVertices-1].x, vertices[this.nVertices-1].y, vertices[0].x, vertices[0].y);
     }
-    
+    public void pintar(Graphics g){
+        
+        
+    }
 }
