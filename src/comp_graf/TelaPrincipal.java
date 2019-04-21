@@ -250,7 +250,7 @@ public class TelaPrincipal extends JFrame {
         botaob.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {              
-                fase5();
+                fase1();
             }
         });
         
@@ -258,7 +258,7 @@ public class TelaPrincipal extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {              
                 resultado -= 1;
-                fase1();
+                fase5();
             }
         });
     }

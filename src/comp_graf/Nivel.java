@@ -34,8 +34,10 @@ public class Nivel extends JPanel {
         Poligono triangulo= new Poligono(3,new int[]{0,25,50}, new int[]{50,0,50});
         Poligono quadrado= new Poligono(4, new int[]{0,0,50,50}, new int[]{0,50,50,0});                 //Centro(25,25)
         Poligono trapezio= new Poligono(4, new int[]{0,50,40,10}, new int[]{40,40,10,10});
-        Poligono pentagono= new Poligono(5,new int[]{10,0,25,50,40}, new int[]{50,23,0,23,50});
+        Poligono pentagono= new Poligono(5,new int[]{10,0,25,50,40}, new int[]{50,21,0,21,50}); //Centro(25,25)
         Poligono retangulo= new Poligono(4, new int[]{0,0,100,100}, new int[]{0,50,50,0});             // Centro (50,25)
+        Poligono estrela= new Poligono(5,new int[]{10,25,40,0,50}, new int[]{50,0,50,21,21});       // Centro (25,25)
+        Poligono bandeira= new Poligono(5, new int[]{0,0,50,50,25}, new int[]{0,50,50,0,25});
         
         System.out.println(fase);
         
@@ -178,6 +180,48 @@ public class Nivel extends JPanel {
             
         
             case 4:
+                
+                //Primeira Linha
+                triangulo.translacao(105, 90);
+                triangulo.desenhar(g);
+                triangulo.translacao(250, 0);
+                triangulo.rotacao(180, 380, 115);
+                triangulo.desenhar(g);
+                triangulo.translacao(250, 0);
+                triangulo.desenhar(g);
+                triangulo.rotacao(180, 630, 115);
+                triangulo.desenhar(g);
+                
+                //Segunda Linha
+                bandeira.translacao(105, 340);
+                bandeira.desenhar(g);
+                bandeira.translacao(250, 0);
+                bandeira.rotacao(180, 380, 365);
+                bandeira.desenhar(g);
+                bandeira.translacao(250, 0);
+                bandeira.desenhar(g);
+                bandeira.rotacao(180, 630, 365);
+                bandeira.desenhar(g);
+                
+                //Terceira Linha
+                estrela.translacao(105, 590);
+                estrela.desenhar(g);
+                estrela.translacao(250, 0);
+                estrela.rotacao(180, 380, 615);
+                estrela.desenhar(g);
+               
+               //Respostas
+                estrela.translacao(530, 0);
+                estrela.desenhar(g);
+                estrela.rotacao(180, 910, 615);
+                estrela.desenhar(g); 
+                estrela.translacao(0, -250);
+                estrela.desenhar(g);
+                estrela.translacao(0, -250);
+                estrela.desenhar(g);
+                bandeira.translacao(280, -250);
+                bandeira.desenhar(g);
+      
                 break;
             
         
