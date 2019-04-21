@@ -30,11 +30,12 @@ public class Nivel extends JPanel {
         g.drawString("B", 805, 265);
         g.drawString("C", 805, 515);
 
-        Poligono reta= new Poligono(2, new int[]{0,50},new int[]{0,50});
+        Poligono reta= new Poligono(2, new int[]{0,50},new int[]{0,50});                                         //Centro(25,25)
         Poligono triangulo= new Poligono(3,new int[]{0,25,50}, new int[]{50,0,50});
-        Poligono quadrado= new Poligono(4, new int[]{0,0,50,50}, new int[]{0,50,50,0});
+        Poligono quadrado= new Poligono(4, new int[]{0,0,50,50}, new int[]{0,50,50,0});                 //Centro(25,25)
         Poligono trapezio= new Poligono(4, new int[]{0,50,40,10}, new int[]{40,40,10,10});
         Poligono pentagono= new Poligono(5,new int[]{10,0,25,50,40}, new int[]{50,23,0,23,50});
+        Poligono retangulo= new Poligono(4, new int[]{0,0,100,100}, new int[]{0,50,50,0});             // Centro (50,25)
         
         System.out.println(fase);
         
@@ -120,6 +121,59 @@ public class Nivel extends JPanel {
                 break;
                 
             case 3:
+                
+                //Primeira Linha
+                triangulo.translacao(105, 115);
+                triangulo.desenhar(g);
+                triangulo.reflexaoY(115);
+                triangulo.desenhar(g);
+                reta.translacao(355,90);
+                reta.rotacao(-45, 380, 115);
+                reta.desenhar(g);
+                triangulo.translacao(500, -12);
+                triangulo.desenhar(g);
+                triangulo.reflexaoY(115);
+                triangulo.desenhar(g);
+                
+                //Segunda Linha
+                retangulo.translacao(80, 340);
+                retangulo.desenhar(g);
+                reta.translacao(0, 250);
+                reta.rotacao(90, 380, 365);
+                reta.desenhar(g);
+                quadrado.translacao(568, 340);
+                quadrado.desenhar(g);
+                quadrado.reflexaoX(630);
+                quadrado.desenhar(g);
+
+                
+                //Terceira Linha
+                quadrado.translacao(-537, 250);
+                quadrado.desenhar(g);
+                quadrado.translacao(537, -250);
+                reta.translacao(0, 250);
+                reta.desenhar(g);
+                reta.rotacao(90, 380, 615);
+                reta.desenhar(g);
+                
+                //Respostas
+                retangulo.translacao(780, -250);
+                retangulo.rotacao(90, 910, 115);
+                retangulo.desenhar(g);
+                
+                quadrado.translacao(206, -37);    // 243 - 37 desloca ele para cima
+                quadrado.desenhar(g);
+                quadrado.reflexaoY(365);
+                quadrado.desenhar(g);
+                quadrado.reflexaoX(910);
+                quadrado.desenhar(g);
+                quadrado.reflexaoY(365);
+                quadrado.desenhar(g);
+                
+                quadrado.translacao(-37, 287);
+                quadrado.desenhar(g);
+
+                
                 break;
             
         

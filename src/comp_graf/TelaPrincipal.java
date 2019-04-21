@@ -127,14 +127,6 @@ public class TelaPrincipal extends JFrame {
         getContentPane().add(container);
         revalidate();
         repaint();
-
-        botaob.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                resultado -= 1;
-                fase1();
-            }
-        });
         
         botaoa.addActionListener(new ActionListener() {
             @Override
@@ -144,10 +136,18 @@ public class TelaPrincipal extends JFrame {
             }
         });
         
+         botaob.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                resultado -= 1;
+                fase3();
+            }
+        });
+        
         botaoc.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                fase3();
+                fase1();
             }
         });
 
@@ -196,14 +196,14 @@ public class TelaPrincipal extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {              
                 resultado -= 1;
-                fase1();
+                fase4();
             }
         });
         
         botaoc.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {              
-                fase4();
+                fase1();
             }
         });
     }
