@@ -29,22 +29,26 @@ public class Nivel extends JPanel {
         g.drawString("A", 805, 15);
         g.drawString("B", 805, 265);
         g.drawString("C", 805, 515);
-
-        Poligono reta= new Poligono(2, new int[]{0,50},new int[]{0,50});                                         //Centro(25,25)
-        Poligono triangulo= new Poligono(3,new int[]{0,25,50}, new int[]{50,0,50});
-        Poligono quadrado= new Poligono(4, new int[]{0,0,50,50}, new int[]{0,50,50,0});                 //Centro(25,25)
-        Poligono trapezio= new Poligono(4, new int[]{0,50,40,10}, new int[]{40,40,10,10});
-        Poligono pentagono= new Poligono(5,new int[]{10,0,25,50,40}, new int[]{50,21,0,21,50}); //Centro(25,25)
-        Poligono retangulo= new Poligono(4, new int[]{0,0,100,100}, new int[]{0,50,50,0});             // Centro (50,25)
-        Poligono estrela= new Poligono(5,new int[]{10,25,40,0,50}, new int[]{50,0,50,21,21});       // Centro (25,25)
-        Poligono bandeira= new Poligono(5, new int[]{0,0,50,50,25}, new int[]{0,50,50,0,25});
+  
+        Poligono reta = new Poligono(2, new int[]{0,50},new int[]{0,50});                                         //Centro(25,25)
+        Poligono triangulo = new Poligono(3, new int[]{0,25,50}, new int[]{50,0,50});
+        Poligono quadrado = new Poligono(4, new int[]{0,0,50,50}, new int[]{0,50,50,0});                 //Centro(25,25)
+        Poligono trapezio = new Poligono(4, new int[]{0,50,40,10}, new int[]{40,40,10,10});
+        Poligono pentagono = new Poligono(5, new int[]{10,0,25,50,40}, new int[]{50,21,0,21,50}); //Centro(25,25)
+        
+        Poligono retangulo = new Poligono(4, new int[]{0,0,100,100}, new int[]{0,50,50,0}); // Escala no quadrado!
+        
+        Poligono estrela = new Poligono(10, new int[]{0,19,25,31,50,35,40,25,10,15}, new int[]{21,21,0,21,21,32,50,39,50,32});    // Centro (25,25)
+        Poligono bandeira = new Poligono(5, new int[]{0,0,50,50,25}, new int[]{0,50,50,0,25});
+        Poligono hexagono = new Poligono(6, new int[]{0,13,38,50,37,12}, new int[]{25,3,3,25,47,47});    //centro (25,25)
+        Poligono octogono = new Poligono(8, new int[]{25,7,0,7,25,43,50,43}, new int[]{0,7,25,43,50,43,25,7});  // centro (25,25)
         
         System.out.println(fase);
         
         switch (fase){
             case 1:
                 
-               // Primeira Linha
+               // Primeira Linha   
                quadrado.translacao(105, 90);
                quadrado.desenhar(g);
                reta.translacao(355, 90);
@@ -225,18 +229,234 @@ public class Nivel extends JPanel {
                 break;
             
         
-            case 5:
+            case 5:     
+               
+                
+                
+                //Primeira linha
+                hexagono.translacao(105, 90);
+                hexagono.desenhar(g);
+                hexagono.translacao(217, -38);
+                hexagono.desenhar(g);
+                hexagono.translacao(77,63);
+                hexagono.desenhar(g);
+                hexagono.translacao(168, -77);
+                hexagono.desenhar(g);
+                hexagono.translacao(77, 0);
+                hexagono.desenhar(g);
+                hexagono.translacao(-77, 77);
+                hexagono.desenhar(g);
+                hexagono.translacao(77, 0);
+                hexagono.desenhar(g);
+                
+                //Segunda Linha
+                hexagono.translacao(-537, 154);
+                hexagono.desenhar(g);
+                hexagono.translacao(0, 77);
+                hexagono.desenhar(g);
+                hexagono.translacao(0, 77);
+                hexagono.desenhar(g);
+                hexagono.translacao(217, -154);
+                hexagono.desenhar(g);
+                hexagono.translacao(0, 77);
+                hexagono.desenhar(g);
+                hexagono.translacao(0, 77);
+                hexagono.desenhar(g);
+                hexagono.translacao(77, -154);
+                hexagono.desenhar(g);
+                hexagono.translacao(0, 77);
+                hexagono.desenhar(g);
+                hexagono.translacao(0, 77);
+                hexagono.desenhar(g);
+                hexagono.translacao(120, -154);
+                hexagono.desenhar(g);
+                hexagono.translacao(0, 77);
+                hexagono.desenhar(g);
+                hexagono.translacao(0, 77);
+                hexagono.desenhar(g);
+                hexagono.translacao(58, -154);
+                hexagono.desenhar(g);
+                hexagono.translacao(0, 77);
+                hexagono.desenhar(g);
+                hexagono.translacao(0, 77);
+                hexagono.desenhar(g);
+                hexagono.translacao(58, -154);
+                hexagono.desenhar(g);
+                hexagono.translacao(0, 77);
+                hexagono.desenhar(g);
+                hexagono.translacao(0, 77);
+                hexagono.desenhar(g);
+                hexagono.translacao(58, -154);
+                hexagono.desenhar(g);
+                hexagono.translacao(0, 77);
+                hexagono.desenhar(g);
+                hexagono.translacao(0, 77);
+                hexagono.desenhar(g);
+                
+                //Terceira linha
+                hexagono.translacao(-638, 122);
+                hexagono.desenhar(g);
+                hexagono.translacao(87, 63);
+                hexagono.desenhar(g);
+                hexagono.translacao(178, -77);
+                hexagono.desenhar(g);
+                hexagono.translacao(77, 0);
+                hexagono.desenhar(g);
+                hexagono.translacao(-77, 77);
+                hexagono.desenhar(g);
+                hexagono.translacao(77, 0);
+                hexagono.desenhar(g);
+                
+                
+                //Respostas
+                hexagono.translacao(400, -77);
+                hexagono.desenhar(g);
+                hexagono.translacao(0, 77);
+                hexagono.desenhar(g);
+                hexagono.translacao(58, -77);
+                hexagono.desenhar(g);
+                hexagono.translacao(0, 77);
+                hexagono.desenhar(g);
+                hexagono.translacao(58, -77);
+                hexagono.desenhar(g);
+                hexagono.translacao(0, 77);
+                hexagono.desenhar(g);
+                hexagono.translacao(58, -77);
+                hexagono.desenhar(g);
+                hexagono.translacao(0, 77);
+                hexagono.desenhar(g);
+                hexagono.translacao(-83, -271);
+                hexagono.desenhar(g);
+                hexagono.translacao(0, -212);
+                hexagono.desenhar(g);
+                hexagono.translacao(0, -77);
+                hexagono.desenhar(g);
+                
+                
                 break;
             
         
             case 6:
+                
+                //Primeira linha
+                hexagono.translacao(105, 90);
+                hexagono.desenhar(g);
+                hexagono.translacao(257, -50);
+                hexagono.desenhar(g);
+                hexagono.translacao(0, 100);
+                hexagono.desenhar(g);
+                hexagono.translacao(193, -50);
+                hexagono.desenhar(g);
+                hexagono.translacao(58, 0);
+                hexagono.desenhar(g);
+                hexagono.translacao(58, 0);
+                hexagono.desenhar(g);
+                
+                // Segunda linha
+                hexagono.translacao(-566, 193 );
+                hexagono.desenhar(g);
+                hexagono.translacao(0, 58);
+                hexagono.desenhar(g);
+                hexagono.translacao(0, 58);
+                hexagono.desenhar(g);
+                hexagono.translacao(212, -116);
+                hexagono.desenhar(g);
+                hexagono.translacao(0, 116);
+                hexagono.desenhar(g);               
+                hexagono.translacao(77, -116);
+                hexagono.desenhar(g);
+                hexagono.translacao(0, 116);
+                hexagono.desenhar(g);
+                hexagono.translacao(180, -116);
+                hexagono.desenhar(g);
+                hexagono.translacao(0, 116);
+                hexagono.desenhar(g);               
+                hexagono.translacao(77, -116);
+                hexagono.desenhar(g);
+                hexagono.translacao(0, 116);
+                hexagono.desenhar(g);
+                hexagono.translacao(-38, -58);
+                hexagono.desenhar(g);
+                
+                //Terceira linha
+                hexagono.translacao(-509, 194);
+                hexagono.desenhar(g);
+                hexagono.translacao(0, 116);
+                hexagono.desenhar(g);
+                hexagono.translacao(257, -116);
+                hexagono.desenhar(g);
+                hexagono.translacao(0, 58);
+                hexagono.desenhar(g);
+                hexagono.translacao(0, 58);
+                hexagono.desenhar(g);
+                
+                
+                //Respostas
+                hexagono.translacao(492, -116);
+                hexagono.desenhar(g);
+                hexagono.translacao(0, 116);
+                hexagono.desenhar(g);               
+                hexagono.translacao(77, -116);
+                hexagono.desenhar(g);
+                hexagono.translacao(0, 116);
+                hexagono.desenhar(g);
+                hexagono.translacao(-38, -58);
+                hexagono.desenhar(g);
+                hexagono.translacao(-38, -310);
+                hexagono.desenhar(g);
+                hexagono.translacao(0, 116);
+                hexagono.desenhar(g);               
+                hexagono.translacao(77, -116);
+                hexagono.desenhar(g);
+                hexagono.translacao(0, 116);
+                hexagono.desenhar(g);
+                hexagono.translacao(-38, -368);
+                hexagono.desenhar(g);
+                hexagono.translacao(0, 58);
+                hexagono.desenhar(g);
+                hexagono.translacao(0, 58);
+                hexagono.desenhar(g);
+                
+                
                 break;
             
         
             case 7:
+                // Primeira linha
+                reta.translacao(105, 90);
+                reta.desenhar(g);
+                quadrado.translacao(355, 90);
+                quadrado.desenhar(g);
+                hexagono.translacao(605, 90);
+                hexagono.desenhar(g);
+                
+                //Segunda linha  
+                reta.translacao(0, 250);
+                reta.desenhar(g);
+                triangulo.translacao(355, 340);
+                triangulo.desenhar(g);
+                pentagono.translacao(605, 340);
+                pentagono.desenhar(g);
+                
+                //Terceira linha
+                reta.translacao(0, 250);
+                reta.desenhar(g);
+                hexagono.translacao(-250, 500);
+                hexagono.desenhar(g);
+                
+                
+                //Respostas
+                octogono.translacao(885, 590);
+                octogono.desenhar(g);
+                trapezio.translacao(885, 340);
+                trapezio.desenhar(g);
+                bandeira.translacao(885, 90);
+                bandeira.desenhar(g);
+                
+                
                 break;
-            
-        
+                
+            /*
             case 8:
                 break;
             
@@ -248,7 +468,7 @@ public class Nivel extends JPanel {
             case 10:
                 break;
             
-        
+            */
             default:
                 break;
         }

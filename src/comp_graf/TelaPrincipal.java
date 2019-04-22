@@ -43,7 +43,7 @@ public class TelaPrincipal extends JFrame {
         });
     }
 
-     public void fase1(){
+    public void fase1() { // Resposta A
         
         getContentPane().removeAll();
         
@@ -86,18 +86,19 @@ public class TelaPrincipal extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e){
                 resultado -= 1;
-                fase1();
+                fase2();
             }
         });
         botaoc.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent e){             
                 resultado -= 1;
-                fase1();
+                fase2();
             }
         });
     }
-    public void fase2() {
+    
+    public void fase2() { // Resposta B
 
         getContentPane().removeAll();
 
@@ -132,14 +133,13 @@ public class TelaPrincipal extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 resultado -= 1;
-                fase1();
+                fase3();
             }
         });
         
          botaob.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                resultado -= 1;
                 fase3();
             }
         });
@@ -147,13 +147,14 @@ public class TelaPrincipal extends JFrame {
         botaoc.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                fase1();
+                resultado -= 1;
+                fase3();
             }
         });
 
     }
 
-    public void fase3() {
+    public void fase3() { // Resposta B
 
         getContentPane().removeAll();
 
@@ -188,14 +189,13 @@ public class TelaPrincipal extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {                
                 resultado -= 1;            
-                fase1();
+                fase4();
             }
         });
         
         botaob.addActionListener(new ActionListener() {
             @Override
-            public void actionPerformed(ActionEvent e) {              
-                resultado -= 1;
+            public void actionPerformed(ActionEvent e) {
                 fase4();
             }
         });
@@ -203,12 +203,13 @@ public class TelaPrincipal extends JFrame {
         botaoc.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {              
-                fase1();
+                resultado -= 1;
+                fase4();
             }
         });
     }
     
-    public void fase4() {
+    public void fase4() { // Resposta C
 
         getContentPane().removeAll();
 
@@ -243,27 +244,27 @@ public class TelaPrincipal extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {                
                 resultado -= 1;            
-                fase1();
+                fase5();
             }
         });
         
         botaob.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {              
-                fase1();
+                resultado -= 1;
+                fase5();
             }
         });
         
         botaoc.addActionListener(new ActionListener() {
             @Override
-            public void actionPerformed(ActionEvent e) {              
-                resultado -= 1;
+            public void actionPerformed(ActionEvent e) {
                 fase5();
             }
         });
     }
     
-    public void fase5() {
+    public void fase5() { // Resposta C
 
         getContentPane().removeAll();
 
@@ -296,7 +297,8 @@ public class TelaPrincipal extends JFrame {
         
         botaoa.addActionListener(new ActionListener() {
             @Override
-            public void actionPerformed(ActionEvent e) {                
+            public void actionPerformed(ActionEvent e) {               
+                resultado -= 1;
                 fase6();
             }
         });
@@ -305,20 +307,19 @@ public class TelaPrincipal extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {              
                 resultado -= 1;
-                fase1();
+                fase6();
             }
         });
         
         botaoc.addActionListener(new ActionListener() {
             @Override
-            public void actionPerformed(ActionEvent e) {              
-                resultado -= 1;            
-                fase1();
+            public void actionPerformed(ActionEvent e) {            
+                fase6();
             }
         });
     }
     
-    public void fase6() {
+    public void fase6() { // Resposta B
 
         getContentPane().removeAll();
 
@@ -353,7 +354,7 @@ public class TelaPrincipal extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {                
                 resultado -= 1;
-                fase1();
+                fase7();
             }
         });
         
@@ -368,12 +369,12 @@ public class TelaPrincipal extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {              
                 resultado -= 1;            
-                fase1();
+                fase7();
             }
         });
     }
     
-    public void fase7() {
+    public void fase7() { // Resposta C
 
         getContentPane().removeAll();
 
@@ -408,7 +409,7 @@ public class TelaPrincipal extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {                
                 resultado -= 1;            
-                fase1();
+                fase8();
             }
         });
         
@@ -416,7 +417,7 @@ public class TelaPrincipal extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {              
                 resultado -= 1;
-                fase1();
+                fase8();
             }
         });
         
@@ -470,7 +471,7 @@ public class TelaPrincipal extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {              
                 resultado -= 1;
-                fase1();
+                fase9();
             }
         });
         
@@ -478,7 +479,7 @@ public class TelaPrincipal extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {              
                 resultado -= 1;            
-                fase1();
+                fase9();
             }
         });
     }
@@ -518,7 +519,7 @@ public class TelaPrincipal extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {                
                 resultado -= 1;
-                fase1();
+                fase10();
             }
         });
         
@@ -533,7 +534,7 @@ public class TelaPrincipal extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {              
                 resultado -= 1;            
-                fase1();
+                fase10();
             }
         });
     }
@@ -573,7 +574,7 @@ public class TelaPrincipal extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {                
                 resultado -= 1;            
-                fase1();
+                fimDeJogo();
             }
         });
         
@@ -581,7 +582,7 @@ public class TelaPrincipal extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {              
                 resultado -= 1;
-                fase1();
+                fimDeJogo();
             }
         });
         
@@ -605,9 +606,11 @@ public class TelaPrincipal extends JFrame {
         JButton botao = new JButton("Recomeçar");
         botao.setBounds(50, 50, 200, 200);
         panel.add(botao);
-
+        getContentPane().add(panel);
+        
         revalidate();
         repaint();
+        
         botao.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {              
