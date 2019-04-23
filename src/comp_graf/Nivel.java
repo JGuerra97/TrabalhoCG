@@ -35,19 +35,21 @@ public class Nivel extends JPanel {
         Poligono quadrado = new Poligono(4, new int[]{0,0,50,50}, new int[]{0,50,50,0});                 //Centro(25,25)
         Poligono trapezio = new Poligono(4, new int[]{0,50,40,10}, new int[]{40,40,10,10});
         Poligono pentagono = new Poligono(5, new int[]{10,0,25,50,40}, new int[]{50,21,0,21,50}); //Centro(25,25)
-        
-        Poligono retangulo = new Poligono(4, new int[]{0,0,100,100}, new int[]{0,50,50,0}); // Escala no quadrado!
+           
+        Poligono retangulo = new Poligono(4, new int[]{0,0,50,50}, new int[]{0,50,50,0}); // Centro(25,25)
+        retangulo.escalaX(2, 0);
         
         Poligono estrela = new Poligono(10, new int[]{0,19,25,31,50,35,40,25,10,15}, new int[]{21,21,0,21,21,32,50,39,50,32});    // Centro (25,25)
         Poligono bandeira = new Poligono(5, new int[]{0,0,50,50,25}, new int[]{0,50,50,0,25});
         Poligono hexagono = new Poligono(6, new int[]{0,13,38,50,37,12}, new int[]{25,3,3,25,47,47});    //centro (25,25)
-        Poligono octogono = new Poligono(8, new int[]{25,7,0,7,25,43,50,43}, new int[]{0,7,25,43,50,43,25,7});  // centro (25,25)
+        Poligono octogono = new Poligono(8, new int[]{25,7,0,7,25,43,50,43}, new int[]{0,7,25,43,50,43,25,7});  // centro (25,25)        
+        Poligono umMonteDePonto = new Poligono(16, new int[]{36,53,54,72,61,71,54,53,36,21,18,1,11,0,18,21}, new int[]{18,5,22,24,40,56,58,76,65,76,58,56,40,24,22,5});
         
         System.out.println(fase);
         
         switch (fase){
             case 1:
-                
+               
                // Primeira Linha   
                quadrado.translacao(105, 90);
                quadrado.desenhar(g);
@@ -456,11 +458,51 @@ public class Nivel extends JPanel {
                 
                 break;
                 
-            /*
+            
             case 8:
+                
+                //Primeira Linha
+                umMonteDePonto.translacao(90, 80);
+                umMonteDePonto.desenhar(g);
+                reta.rotacao(-45, 100, 0);
+                reta.translacao(315, 0);
+                reta.desenhar(g);
+                reta.translacao(0, 100);
+                reta.desenhar(g);
+                umMonteDePonto.translacao(505, 0);
+                umMonteDePonto.desenhar(g);
+                
+                //Segunda Linha
+                umMonteDePonto.translacao(-505, 245);
+                umMonteDePonto.desenhar(g);
+                retangulo.escalaX(1.3, 0);
+                retangulo.rotacao(90, 25, 25);
+                retangulo.translacao(355, 300);
+                retangulo.desenhar(g);
+                
+                //Terceira Linha
+                umMonteDePonto.translacao(0, 250);
+                umMonteDePonto.desenhar(g);
+                quadrado.translacao(355, 565);
+                quadrado.desenhar(g);
+                quadrado.translacao(0, 55);
+                quadrado.desenhar(g);
+                
+                //Respostas
+                reta.rotacao(90, 350, 190);
+                reta.translacao(540, -100);
+                reta.desenhar(g);
+                retangulo.escalaGlobal(0.1, 0.5, 300, 300);
+                retangulo.translacao(600, 35);
+                retangulo.desenhar(g);
+                retangulo.rotacao(90, 910, 370);
+                retangulo.translacao(0, 250);
+                retangulo.desenhar(g);
+                
+                
                 break;
             
-        
+            /*
             case 9:
                 break;
             
@@ -470,6 +512,8 @@ public class Nivel extends JPanel {
             
             */
             default:
+                
+                
                 break;
         }
     }

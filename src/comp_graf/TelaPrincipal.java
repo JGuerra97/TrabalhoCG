@@ -463,7 +463,8 @@ public class TelaPrincipal extends JFrame {
         botaoa.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {                
-                fase9();
+                resultado -= 1;
+                fimDeJogo();
             }
         });
         
@@ -471,15 +472,14 @@ public class TelaPrincipal extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {              
                 resultado -= 1;
-                fase9();
+                fimDeJogo();
             }
         });
         
         botaoc.addActionListener(new ActionListener() {
             @Override
-            public void actionPerformed(ActionEvent e) {              
-                resultado -= 1;            
-                fase9();
+            public void actionPerformed(ActionEvent e) {         
+                fimDeJogo();
             }
         });
     }
@@ -597,17 +597,20 @@ public class TelaPrincipal extends JFrame {
     public void fimDeJogo() {
         
         System.out.println("Resultado: " + resultado);
-        resultado = 10;
+        
         
         getContentPane().removeAll();
 
         JPanel panel = new JPanel();
         
         JButton botao = new JButton("Recomeçar");
+        JButton botaoresp = new JButton("Resultado = "+ resultado); //Teste
         botao.setBounds(50, 50, 200, 200);
         panel.add(botao);
+        panel.add(botaoresp);
         getContentPane().add(panel);
         
+        resultado = 10;
         revalidate();
         repaint();
         
