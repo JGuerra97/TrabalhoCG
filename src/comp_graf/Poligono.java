@@ -37,9 +37,9 @@ public class Poligono {
         this.translacao(0, referenciay);
     }
     
-    public void escalaGlobal(double sx, double sy, int referenciax, int referenciay){
-        this.escalaX(sx, referenciax);
-        this.escalaY(sy, referenciay);
+    public void escalaGlobal(double escala, int referenciax, int referenciay){
+        this.escalaX(escala, referenciax);
+        this.escalaY(escala, referenciay);
     }
     
     public void rotacao(double angulo, int referenciax, int referenciay){

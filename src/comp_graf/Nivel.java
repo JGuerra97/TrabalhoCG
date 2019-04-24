@@ -154,9 +154,9 @@ public class Nivel extends JPanel {
                 
                 //Terceira Linha
                 quadrado.translacao(-537, 250);
-                quadrado.escalaGlobal(2, 2, 130, 615);
+                quadrado.escalaGlobal(2, 130, 615);
                 quadrado.desenhar(g);
-                quadrado.escalaGlobal(0.5, 0.5, 130, 615);
+                quadrado.escalaGlobal(0.5, 130, 615);
                 quadrado.translacao(537, -250);
                 reta.translacao(0, 250);
                 reta.desenhar(g);
@@ -491,7 +491,8 @@ public class Nivel extends JPanel {
                 reta.rotacao(90, 350, 190);
                 reta.translacao(540, -100);
                 reta.desenhar(g);
-                retangulo.escalaGlobal(0.1, 0.5, 300, 300);
+                retangulo.escalaX(0.1, 300);
+                retangulo.escalaY(0.5, 300);
                 retangulo.translacao(600, 35);
                 retangulo.desenhar(g);
                 retangulo.rotacao(90, 910, 370);
