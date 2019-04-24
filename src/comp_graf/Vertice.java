@@ -12,9 +12,4 @@ public class Vertice {
         this.x = x;
         this.y = y;
     }
-    
-    public void translacao(int x, int y){
-        this.x += x;
-        this.y += y;
-    }
 }
