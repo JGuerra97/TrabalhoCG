@@ -1,7 +1,6 @@
 package comp_graf;
 
 import java.awt.Graphics;
-import java.lang.Math;
 
 public class Poligono {
     
