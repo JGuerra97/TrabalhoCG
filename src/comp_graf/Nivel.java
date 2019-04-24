@@ -1,7 +1,6 @@
 package comp_graf;
 
 import java.awt.Graphics;
-import java.util.ArrayList;
 import javax.swing.*;
 
 public class Nivel extends JPanel {
@@ -44,9 +43,7 @@ public class Nivel extends JPanel {
         Poligono hexagono = new Poligono(6, new int[]{0,13,38,50,37,12}, new int[]{25,3,3,25,47,47});    //centro (25,25)
         Poligono octogono = new Poligono(8, new int[]{25,7,0,7,25,43,50,43}, new int[]{0,7,25,43,50,43,25,7});  // centro (25,25)        
         Poligono umMonteDePonto = new Poligono(16, new int[]{36,53,54,72,61,71,54,53,36,21,18,1,11,0,18,21}, new int[]{18,5,22,24,40,56,58,76,65,76,58,56,40,24,22,5});
-        
-        System.out.println(fase);
-        
+                
         switch (fase){
             case 1:
                
@@ -157,7 +154,9 @@ public class Nivel extends JPanel {
                 
                 //Terceira Linha
                 quadrado.translacao(-537, 250);
+                quadrado.escalaGlobal(2, 2, 130, 615);
                 quadrado.desenhar(g);
+                quadrado.escalaGlobal(0.5, 0.5, 130, 615);
                 quadrado.translacao(537, -250);
                 reta.translacao(0, 250);
                 reta.desenhar(g);
@@ -501,18 +500,9 @@ public class Nivel extends JPanel {
                 
                 
                 break;
-            
-            /*
-            case 9:
-                break;
-            
-        
-            case 10:
-                break;
-            
-            */
+
+
             default:
-                
                 
                 break;
         }

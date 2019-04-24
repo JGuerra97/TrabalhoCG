@@ -5,6 +5,7 @@ import java.awt.CardLayout;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
+import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.PopupMenu;
 import java.awt.event.ActionEvent;
@@ -16,24 +17,30 @@ import javax.swing.GroupLayout.Group;
 
 public class TelaPrincipal extends JFrame {
     Graphics g;
-    private int resultado = 10; //Place Holder para o resultado final
+    private int resultado = 8; //Place Holder para o resultado final
     
 
     public TelaPrincipal() {
 
         super("TESTE DE QI");
 
-        JPanel panel = new JPanel();
-        this.add(panel);
-        JButton botao = new JButton("Começar");
-        botao.setBounds(50, 50, 200, 200);
-        panel.add(botao);
-
         this.setSize(1045,890);
         this.setLocationRelativeTo(null);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setResizable(false);
         this.setVisible(true);
+
+        JPanel panel = new JPanel(null);
+        this.add(panel);
+        JButton botao = new JButton("COMEÇAR");
+        botao.setBounds((this.getWidth()/2) - 50, (this.getHeight()/2) - 25, 100, 40);
+        botao.setFont(new Font("Arial", Font.BOLD, 12));
+        panel.add(botao);
+        
+        JLabel label = new JLabel("TESTE DE QI");
+        label.setBounds((this.getWidth()/2) - 75, (this.getHeight()/2) - 100, 150, 40);
+        label.setFont(new Font("Arial", Font.BOLD, 24));
+        panel.add(label);
 
         botao.addActionListener(new ActionListener() {
             @Override
@@ -429,7 +436,7 @@ public class TelaPrincipal extends JFrame {
         });
     }
     
-    public void fase8() {
+    public void fase8() { // Resposta C
 
         getContentPane().removeAll();
 
@@ -594,29 +601,29 @@ public class TelaPrincipal extends JFrame {
         });
     }
     
-    public void fimDeJogo() {
-        
-        System.out.println("Resultado: " + resultado);
-        
+    public void fimDeJogo() {        
         
         getContentPane().removeAll();
-
-        JPanel panel = new JPanel();
         
-        JButton botao = new JButton("Recomeçar");
-        JButton botaoresp = new JButton("Resultado = "+ resultado); //Teste
-        botao.setBounds(50, 50, 200, 200);
+        JPanel panel = new JPanel(null);
+        this.add(panel);
+        JButton botao = new JButton("RECOMEÇAR");
+        botao.setBounds((this.getWidth()/2) - 60, (this.getHeight()/2) - 25, 120, 40);
+        botao.setFont(new Font("Arial", Font.BOLD, 12));
         panel.add(botao);
-        panel.add(botaoresp);
-        getContentPane().add(panel);
         
-        resultado = 10;
+        JLabel label = new JLabel("VOCÊ ACERTOU "+ resultado + " DE 8 QUESTÕES");
+        label.setBounds((this.getWidth()/2) - 210, (this.getHeight()/2) - 100, 420, 40);
+        label.setFont(new Font("Arial", Font.BOLD, 24));
+        panel.add(label);
+        
         revalidate();
         repaint();
         
         botao.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {              
+                resultado = 8;
                 fase1();
             }
         });
