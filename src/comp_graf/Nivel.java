@@ -29,20 +29,20 @@ public class Nivel extends JPanel {
         g.drawString("B", 805, 265);
         g.drawString("C", 805, 515);
   
-        Poligono reta = new Poligono(2, new int[]{0,50},new int[]{0,50});                                         //Centro(25,25)
-        Poligono triangulo = new Poligono(3, new int[]{0,25,50}, new int[]{50,0,50});
-        Poligono quadrado = new Poligono(4, new int[]{0,0,50,50}, new int[]{0,50,50,0});                 //Centro(25,25)
-        Poligono trapezio = new Poligono(4, new int[]{0,50,40,10}, new int[]{40,40,10,10});
-        Poligono pentagono = new Poligono(5, new int[]{10,0,25,50,40}, new int[]{50,21,0,21,50}); //Centro(25,25)
+        Face reta = new Face(2, new int[]{0,50},new int[]{0,50});                                         //Centro(25,25)
+        Face triangulo = new Face(3, new int[]{0,25,50}, new int[]{50,0,50});
+        Face quadrado = new Face(4, new int[]{0,0,50,50}, new int[]{0,50,50,0});                 //Centro(25,25)
+        Face trapezio = new Face(4, new int[]{0,50,40,10}, new int[]{40,40,10,10});
+        Face pentagono = new Face(5, new int[]{10,0,25,50,40}, new int[]{50,21,0,21,50}); //Centro(25,25)
            
-        Poligono retangulo = new Poligono(4, new int[]{0,0,50,50}, new int[]{0,50,50,0}); // Centro(25,25)
+        Face retangulo = new Face(4, new int[]{0,0,50,50}, new int[]{0,50,50,0}); // Centro(25,25)
         retangulo.escalaX(2, 0);
         
-        Poligono estrela = new Poligono(10, new int[]{0,19,25,31,50,35,40,25,10,15}, new int[]{21,21,0,21,21,32,50,39,50,32});    // Centro (25,25)
-        Poligono bandeira = new Poligono(5, new int[]{0,0,50,50,25}, new int[]{0,50,50,0,25});
-        Poligono hexagono = new Poligono(6, new int[]{0,13,38,50,37,12}, new int[]{25,3,3,25,47,47});    //centro (25,25)
-        Poligono octogono = new Poligono(8, new int[]{25,7,0,7,25,43,50,43}, new int[]{0,7,25,43,50,43,25,7});  // centro (25,25)        
-        Poligono umMonteDePonto = new Poligono(16, new int[]{36,53,54,72,61,71,54,53,36,21,18,1,11,0,18,21}, new int[]{18,5,22,24,40,56,58,76,65,76,58,56,40,24,22,5});
+        Face estrela = new Face(10, new int[]{0,19,25,31,50,35,40,25,10,15}, new int[]{21,21,0,21,21,32,50,39,50,32});    // Centro (25,25)
+        Face bandeira = new Face(5, new int[]{0,0,50,50,25}, new int[]{0,50,50,0,25});
+        Face hexagono = new Face(6, new int[]{0,13,38,50,37,12}, new int[]{25,3,3,25,47,47});    //centro (25,25)
+        Face octogono = new Face(8, new int[]{25,7,0,7,25,43,50,43}, new int[]{0,7,25,43,50,43,25,7});  // centro (25,25)        
+        Face umMonteDePonto = new Face(16, new int[]{36,53,54,72,61,71,54,53,36,21,18,1,11,0,18,21}, new int[]{18,5,22,24,40,56,58,76,65,76,58,56,40,24,22,5});
                 
         switch (fase){
             case 1:

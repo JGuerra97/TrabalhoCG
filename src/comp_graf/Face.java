@@ -2,13 +2,13 @@ package comp_graf;
 
 import java.awt.Graphics;
 
-public class Poligono {
+public class Face {
     
     protected final int nVertices;
     protected final Vertice[] vertices;
     protected double matrizTransformacao[][];
     
-    public Poligono(int n, int[] x, int[] y){
+    public Face(int n, int[] x, int[] y){
         this.nVertices = n;
         vertices = new Vertice[this.nVertices];
         for(int i=0; i < this.nVertices; i++){
