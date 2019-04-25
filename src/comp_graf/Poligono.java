@@ -25,8 +25,8 @@ public class Poligono {
     private void transformar(){
         for(Vertice v : vertices){
             int temp = v.x;
-            v.x = (int)((v.x * matrizTransformacao[0][0]) + (v.y * matrizTransformacao[0][1]) + (matrizTransformacao[0][2]));
-            v.y = (int)((temp * matrizTransformacao[1][0]) + (v.y * matrizTransformacao[1][1]) + (matrizTransformacao[1][2]));
+            v.x = (int)(v.x * matrizTransformacao[0][0]) + (int)(v.y * matrizTransformacao[0][1]) + (int)(matrizTransformacao[0][2]);
+            v.y = (int)(temp * matrizTransformacao[1][0]) + (int)(v.y * matrizTransformacao[1][1]) + (int)(matrizTransformacao[1][2]);
         }
     }
     
