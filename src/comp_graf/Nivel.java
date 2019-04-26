@@ -17,17 +17,17 @@ public class Nivel extends JPanel {
         g.drawRect(15, 0, 230, 230);
         g.drawRect(265, 0, 230, 230);
         g.drawRect(515, 0, 230, 230);
-        g.drawRect(15, 250, 230, 230);
-        g.drawRect(265, 250, 230, 230);
-        g.drawRect(515, 250, 230, 230);
-        g.drawRect(15, 500, 230, 230);
-        g.drawRect(265, 500, 230, 230);
+        g.drawRect(15, 240, 230, 230);
+        g.drawRect(265, 240, 230, 230);
+        g.drawRect(515, 240, 230, 230);
+        g.drawRect(15, 480, 230, 230);
+        g.drawRect(265, 480, 230, 230);
         g.drawRect(795,0,230,230);
-        g.drawRect(795,250,230,230);
-        g.drawRect(795,500,230,230);
+        g.drawRect(795,240,230,230);
+        g.drawRect(795,480,230,230);
         g.drawString("A", 805, 15);
-        g.drawString("B", 805, 265);
-        g.drawString("C", 805, 515);
+        g.drawString("B", 805, 255);
+        g.drawString("C", 805, 495);
   
         Face reta = new Face(2, new int[]{0,50},new int[]{0,50});
         Face triangulo = new Face(3, new int[]{0,25,50}, new int[]{0,-50,0});
@@ -56,28 +56,28 @@ public class Nivel extends JPanel {
                triangulo.desenhar(g);
                
                // Segunda Linha
-               quadrado.translacao(0, 250);
+               quadrado.translacao(0, 240);
                quadrado.desenhar(g);
                reta.rotacao(90, 380, 115);
-               reta.translacao(0, 250);
+               reta.translacao(0, 240);
                reta.desenhar(g);
-               pentagono.translacao(615, 390); 
+               pentagono.translacao(615, 380); 
                pentagono.desenhar(g);
                
                // Terceira Linha
-               triangulo.translacao(-500, 500);
+               triangulo.translacao(-500, 480);
                triangulo.desenhar(g);
-               reta.translacao(0, 250);
+               reta.translacao(0, 240);
                reta.desenhar(g);
-               reta.rotacao(90, 380, 615);
+               reta.rotacao(90, 380, 595);
                reta.desenhar(g);
                
                // Respostas
-               triangulo.translacao(780, -500);
+               triangulo.translacao(780, -480);
                triangulo.desenhar(g);
                quadrado.translacao(780, 0);
                quadrado.desenhar(g);
-               reta.rotacao(45, 380, 615);
+               reta.rotacao(45, 380, 595);
                reta.translacao(530, 0);
                reta.desenhar(g);
 
@@ -96,9 +96,9 @@ public class Nivel extends JPanel {
                 triangulo.desenhar(g);
                 
                 // Segunda Linha
-                pentagono.translacao(115, 390);
+                pentagono.translacao(115, 380);
                 pentagono.desenhar(g);
-                pentagono.rotacao(90, 130, 365);
+                pentagono.rotacao(90, 130, 355);
                 pentagono.translacao(250, 0);
                 pentagono.desenhar(g);
                 pentagono.reflexaoX(380);
@@ -107,20 +107,20 @@ public class Nivel extends JPanel {
                 
                 // Terceira Linha
                 trapezio.rotacao(-90, 25, -15);
-                trapezio.translacao(105, 630);
+                trapezio.translacao(105, 610);
                 trapezio.desenhar(g);
-                trapezio.rotacao(90, 130, 615);
+                trapezio.rotacao(90, 130, 595);
                 trapezio.translacao(250, 0);
                 trapezio.desenhar(g);
                 
                 // Respostas
                 quadrado.translacao(885, 90);
                 quadrado.desenhar(g);
-                trapezio.translacao(530, -250);
-                trapezio.reflexaoY(365);
+                trapezio.translacao(530, -240);
+                trapezio.reflexaoY(355);
                 trapezio.desenhar(g);
-                trapezio.reflexaoY(365);
-                trapezio.translacao(0, 250);
+                trapezio.reflexaoY(355);
+                trapezio.translacao(0, 240);
                 trapezio.desenhar(g);
                 
                 break;
@@ -141,43 +141,43 @@ public class Nivel extends JPanel {
                 triangulo.desenhar(g);
                 
                 //Segunda Linha
-                retangulo.translacao(80, 340);
+                retangulo.translacao(80, 330);
                 retangulo.desenhar(g);
-                reta.translacao(0, 250);
-                reta.rotacao(90, 380, 365);
+                reta.translacao(0, 240);
+                reta.rotacao(90, 380, 355);
                 reta.desenhar(g);
-                quadrado.translacao(568, 340);
+                quadrado.translacao(568, 330);
                 quadrado.desenhar(g);
                 quadrado.reflexaoX(630);
                 quadrado.desenhar(g);
 
                 
                 //Terceira Linha
-                quadrado.translacao(-537, 250);
-                quadrado.escalaGlobal(2, 130, 615);
+                quadrado.translacao(-537, 240);
+                quadrado.escalaGlobal(2, 130, 595);
                 quadrado.desenhar(g);
-                quadrado.escalaGlobal(0.5, 130, 615);
-                quadrado.translacao(537, -250);
-                reta.translacao(0, 250);
+                quadrado.escalaGlobal(0.5, 130, 595);
+                quadrado.translacao(537, -240);
+                reta.translacao(0, 240);
                 reta.desenhar(g);
-                reta.rotacao(90, 380, 615);
+                reta.rotacao(90, 380, 595);
                 reta.desenhar(g);
                 
                 //Respostas
-                retangulo.translacao(780, -250);
+                retangulo.translacao(780, -240);
                 retangulo.rotacao(90, 910, 115);
                 retangulo.desenhar(g);
                 
                 quadrado.translacao(206, -37);    // 243 - 37 desloca ele para cima
                 quadrado.desenhar(g);
-                quadrado.reflexaoY(365);
+                quadrado.reflexaoY(355);
                 quadrado.desenhar(g);
                 quadrado.reflexaoX(910);
                 quadrado.desenhar(g);
-                quadrado.reflexaoY(365);
+                quadrado.reflexaoY(355);
                 quadrado.desenhar(g);
                 
-                quadrado.translacao(-37, 287);
+                quadrado.translacao(-37, 277);
                 quadrado.desenhar(g);
 
                 
@@ -198,33 +198,33 @@ public class Nivel extends JPanel {
                 triangulo.desenhar(g);
                 
                 //Segunda Linha
-                bandeira.translacao(105, 340);
+                bandeira.translacao(105, 330);
                 bandeira.desenhar(g);
                 bandeira.translacao(250, 0);
-                bandeira.rotacao(180, 380, 365);
+                bandeira.rotacao(180, 380, 355);
                 bandeira.desenhar(g);
                 bandeira.translacao(250, 0);
                 bandeira.desenhar(g);
-                bandeira.rotacao(180, 630, 365);
+                bandeira.rotacao(180, 630, 355);
                 bandeira.desenhar(g);
                 
                 //Terceira Linha
-                estrela.translacao(105, 611);
+                estrela.translacao(105, 591);
                 estrela.desenhar(g);
                 estrela.translacao(250, 0);
-                estrela.rotacao(180, 380, 615);
+                estrela.rotacao(180, 380, 595);
                 estrela.desenhar(g);
                
                //Respostas
                 estrela.translacao(530, 0);
                 estrela.desenhar(g);
-                estrela.rotacao(180, 910, 615);
-                estrela.desenhar(g); 
-                estrela.translacao(0, -250);
+                estrela.rotacao(180, 910, 595);
                 estrela.desenhar(g);
-                estrela.translacao(0, -250);
+                estrela.translacao(0, -240);
                 estrela.desenhar(g);
-                bandeira.translacao(280, -250);
+                estrela.translacao(0, -240);
+                estrela.desenhar(g);
+                bandeira.translacao(280, -240);
                 bandeira.desenhar(g);
       
                 break;
@@ -251,12 +251,13 @@ public class Nivel extends JPanel {
                 hexagono.desenhar(g);
                 
                 //Segunda Linha
-                hexagono.translacao(-537, 154);
+                hexagono.translacao(-537, 144);
                 hexagono.desenhar(g);
                 hexagono.translacao(0, 77);
                 hexagono.desenhar(g);
                 hexagono.translacao(0, 77);
                 hexagono.desenhar(g);
+                
                 hexagono.translacao(217, -154);
                 hexagono.desenhar(g);
                 hexagono.translacao(0, 77);
@@ -269,6 +270,7 @@ public class Nivel extends JPanel {
                 hexagono.desenhar(g);
                 hexagono.translacao(0, 77);
                 hexagono.desenhar(g);
+                
                 hexagono.translacao(120, -154);
                 hexagono.desenhar(g);
                 hexagono.translacao(0, 77);
@@ -295,7 +297,7 @@ public class Nivel extends JPanel {
                 hexagono.desenhar(g);
                 
                 //Terceira linha
-                hexagono.translacao(-638, 122);
+                hexagono.translacao(-638, 132);
                 hexagono.desenhar(g);
                 hexagono.translacao(87, 63);
                 hexagono.desenhar(g);
@@ -354,7 +356,7 @@ public class Nivel extends JPanel {
                 hexagono.desenhar(g);
                 
                 // Segunda linha
-                hexagono.translacao(-566, 193 );
+                hexagono.translacao(-566, 183 );
                 hexagono.desenhar(g);
                 hexagono.translacao(0, 58);
                 hexagono.desenhar(g);
@@ -380,7 +382,7 @@ public class Nivel extends JPanel {
                 hexagono.desenhar(g);
                 
                 //Terceira linha
-                hexagono.translacao(-509, 194);
+                hexagono.translacao(-509, 184);
                 hexagono.desenhar(g);
                 hexagono.translacao(0, 116);
                 hexagono.desenhar(g);
@@ -393,7 +395,7 @@ public class Nivel extends JPanel {
                 
                 
                 //Respostas
-                hexagono.translacao(492, -116);
+                hexagono.translacao(482, -116);
                 hexagono.desenhar(g);
                 hexagono.translacao(0, 116);
                 hexagono.desenhar(g);               
@@ -403,7 +405,8 @@ public class Nivel extends JPanel {
                 hexagono.desenhar(g);
                 hexagono.translacao(-38, -58);
                 hexagono.desenhar(g);
-                hexagono.translacao(-38, -310);
+                
+                hexagono.translacao(-38, -300);
                 hexagono.desenhar(g);
                 hexagono.translacao(0, 116);
                 hexagono.desenhar(g);               
@@ -411,7 +414,8 @@ public class Nivel extends JPanel {
                 hexagono.desenhar(g);
                 hexagono.translacao(0, 116);
                 hexagono.desenhar(g);
-                hexagono.translacao(-38, -368);
+                
+                hexagono.translacao(-38, -358);
                 hexagono.desenhar(g);
                 hexagono.translacao(0, 58);
                 hexagono.desenhar(g);
@@ -432,24 +436,24 @@ public class Nivel extends JPanel {
                 hexagono.desenhar(g);
                 
                 //Segunda linha  
-                reta.translacao(0, 250);
+                reta.translacao(0, 240);
                 reta.desenhar(g);
-                triangulo.translacao(355, 390);
+                triangulo.translacao(355, 380);
                 triangulo.desenhar(g);
-                pentagono.translacao(615, 390);
+                pentagono.translacao(615, 380);
                 pentagono.desenhar(g);
                 
                 //Terceira linha
-                reta.translacao(0, 250);
+                reta.translacao(0, 240);
                 reta.desenhar(g);
-                hexagono.translacao(-250, 500);
+                hexagono.translacao(-250, 480);
                 hexagono.desenhar(g);
                 
                 
                 //Respostas
-                octogono.translacao(910, 590);
+                octogono.translacao(910, 570);
                 octogono.desenhar(g);
-                trapezio.translacao(885, 380);
+                trapezio.translacao(885, 370);
                 trapezio.desenhar(g);
                 bandeira.translacao(885, 90);
                 bandeira.desenhar(g);
@@ -461,7 +465,7 @@ public class Nivel extends JPanel {
             case 8:
                 
                 //Primeira Linha
-                umMonteDePonto.translacao(126, 98);
+                umMonteDePonto.translacao(126, 92);
                 umMonteDePonto.desenhar(g);
                 reta.rotacao(-45, 100, 0);
                 reta.translacao(315, 0);
@@ -472,31 +476,31 @@ public class Nivel extends JPanel {
                 umMonteDePonto.desenhar(g);
                 
                 //Segunda Linha
-                umMonteDePonto.translacao(-505, 245);
+                umMonteDePonto.translacao(-505, 240);
                 umMonteDePonto.desenhar(g);
                 retangulo.escalaX(1.3, 0);
                 retangulo.rotacao(90, 25, 25);
-                retangulo.translacao(355, 300);
+                retangulo.translacao(355, 290);
                 retangulo.desenhar(g);
                 
                 //Terceira Linha
-                umMonteDePonto.translacao(0, 250);
+                umMonteDePonto.translacao(0, 240);
                 umMonteDePonto.desenhar(g);
-                quadrado.translacao(355, 565);
+                quadrado.translacao(355, 545);
                 quadrado.desenhar(g);
                 quadrado.translacao(0, 55);
                 quadrado.desenhar(g);
                 
                 //Respostas
                 reta.rotacao(90, 350, 190);
-                reta.translacao(540, -100);
+                reta.translacao(540, -110);
                 reta.desenhar(g);
                 retangulo.escalaX(0.1, 300);
                 retangulo.escalaY(0.5, 300);
-                retangulo.translacao(600, 35);
+                retangulo.translacao(600, 25);
                 retangulo.desenhar(g);
-                retangulo.rotacao(90, 910, 370);
-                retangulo.translacao(0, 250);
+                retangulo.rotacao(90, 900, 360);
+                retangulo.translacao(0, 240);
                 retangulo.desenhar(g);
                 
                 

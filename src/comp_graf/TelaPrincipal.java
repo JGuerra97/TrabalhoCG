@@ -24,7 +24,7 @@ public class TelaPrincipal extends JFrame {
 
         super("TESTE DE QI");
 
-        this.setSize(1045,890);
+        this.setSize(1045,850);
         this.setLocationRelativeTo(null);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setResizable(false);
@@ -64,7 +64,7 @@ public class TelaPrincipal extends JFrame {
         
     
         panel.setLayout( new FlowLayout() );
-        panel.setPreferredSize( new Dimension( 100, 100 ) );
+        panel.setPreferredSize( new Dimension( 100, 40 ) );
         panel.setMinimumSize( new Dimension( 20, 50 ) );
         panel.add(botaoa, BorderLayout.WEST);      
         panel.add(botaob, BorderLayout.CENTER);
@@ -118,7 +118,7 @@ public class TelaPrincipal extends JFrame {
         JButton botaoc = new JButton("C");
 
         panel.setLayout(new FlowLayout());
-        panel.setPreferredSize(new Dimension(100, 100));
+        panel.setPreferredSize(new Dimension(100, 40));
         panel.setMinimumSize(new Dimension(20, 50));
         panel.add(botaoa, BorderLayout.WEST);
         panel.add(botaob, BorderLayout.CENTER);
@@ -174,7 +174,7 @@ public class TelaPrincipal extends JFrame {
         JButton botaoc = new JButton("C");
 
         panel.setLayout(new FlowLayout());
-        panel.setPreferredSize(new Dimension(100, 100));
+        panel.setPreferredSize(new Dimension(100, 40));
         panel.setMinimumSize(new Dimension(20, 50));
         panel.add(botaoa, BorderLayout.WEST);
         panel.add(botaob, BorderLayout.CENTER);
@@ -229,7 +229,7 @@ public class TelaPrincipal extends JFrame {
         JButton botaoc = new JButton("C");
 
         panel.setLayout(new FlowLayout());
-        panel.setPreferredSize(new Dimension(100, 100));
+        panel.setPreferredSize(new Dimension(100, 40));
         panel.setMinimumSize(new Dimension(20, 50));
         panel.add(botaoa, BorderLayout.WEST);
         panel.add(botaob, BorderLayout.CENTER);
@@ -284,7 +284,7 @@ public class TelaPrincipal extends JFrame {
         JButton botaoc = new JButton("C");
 
         panel.setLayout(new FlowLayout());
-        panel.setPreferredSize(new Dimension(100, 100));
+        panel.setPreferredSize(new Dimension(100, 40));
         panel.setMinimumSize(new Dimension(20, 50));
         panel.add(botaoa, BorderLayout.WEST);
         panel.add(botaob, BorderLayout.CENTER);
@@ -339,7 +339,7 @@ public class TelaPrincipal extends JFrame {
         JButton botaoc = new JButton("C");
 
         panel.setLayout(new FlowLayout());
-        panel.setPreferredSize(new Dimension(100, 100));
+        panel.setPreferredSize(new Dimension(100, 40));
         panel.setMinimumSize(new Dimension(20, 50));
         panel.add(botaoa, BorderLayout.WEST);
         panel.add(botaob, BorderLayout.CENTER);
@@ -394,7 +394,7 @@ public class TelaPrincipal extends JFrame {
         JButton botaoc = new JButton("C");
 
         panel.setLayout(new FlowLayout());
-        panel.setPreferredSize(new Dimension(100, 100));
+        panel.setPreferredSize(new Dimension(100, 40));
         panel.setMinimumSize(new Dimension(20, 50));
         panel.add(botaoa, BorderLayout.WEST);
         panel.add(botaob, BorderLayout.CENTER);
@@ -449,7 +449,7 @@ public class TelaPrincipal extends JFrame {
         JButton botaoc = new JButton("C");
 
         panel.setLayout(new FlowLayout());
-        panel.setPreferredSize(new Dimension(100, 100));
+        panel.setPreferredSize(new Dimension(100, 40));
         panel.setMinimumSize(new Dimension(20, 50));
         panel.add(botaoa, BorderLayout.WEST);
         panel.add(botaob, BorderLayout.CENTER);
