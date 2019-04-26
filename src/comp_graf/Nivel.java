@@ -29,20 +29,20 @@ public class Nivel extends JPanel {
         g.drawString("B", 805, 265);
         g.drawString("C", 805, 515);
   
-        Face reta = new Face(2, new int[]{0,50},new int[]{0,50});                                         //Centro(25,25)
-        Face triangulo = new Face(3, new int[]{0,25,50}, new int[]{50,0,50});
-        Face quadrado = new Face(4, new int[]{0,0,50,50}, new int[]{0,50,50,0});                 //Centro(25,25)
-        Face trapezio = new Face(4, new int[]{0,50,40,10}, new int[]{40,40,10,10});
-        Face pentagono = new Face(5, new int[]{10,0,25,50,40}, new int[]{50,21,0,21,50}); //Centro(25,25)
+        Face reta = new Face(2, new int[]{0,50},new int[]{0,50});
+        Face triangulo = new Face(3, new int[]{0,25,50}, new int[]{0,-50,0});
+        Face quadrado = new Face(4, new int[]{0,0,50,50}, new int[]{0,50,50,0});
+        Face trapezio = new Face(4, new int[]{0,50,40,10}, new int[]{0,0,-30,-30});
+        Face pentagono = new Face(5, new int[]{0,-10,15,40,30}, new int[]{0,-29,-50,-29,0});
            
-        Face retangulo = new Face(4, new int[]{0,0,50,50}, new int[]{0,50,50,0}); // Centro(25,25)
+        Face retangulo = new Face(4, new int[]{0,0,50,50}, new int[]{0,50,50,0});
         retangulo.escalaX(2, 0);
         
-        Face estrela = new Face(10, new int[]{0,19,25,31,50,35,40,25,10,15}, new int[]{21,21,0,21,21,32,50,39,50,32});    // Centro (25,25)
+        Face estrela = new Face(10, new int[]{0,19,25,31,50,35,40,25,10,15}, new int[]{0,0,-21,0,0,11,29,18,29,11});
         Face bandeira = new Face(5, new int[]{0,0,50,50,25}, new int[]{0,50,50,0,25});
-        Face hexagono = new Face(6, new int[]{0,13,38,50,37,12}, new int[]{25,3,3,25,47,47});    //centro (25,25)
-        Face octogono = new Face(8, new int[]{25,7,0,7,25,43,50,43}, new int[]{0,7,25,43,50,43,25,7});  // centro (25,25)        
-        Face umMonteDePonto = new Face(16, new int[]{36,53,54,72,61,71,54,53,36,21,18,1,11,0,18,21}, new int[]{18,5,22,24,40,56,58,76,65,76,58,56,40,24,22,5});
+        Face hexagono = new Face(6, new int[]{0,13,38,50,37,12}, new int[]{0,-22,-22,0,22,22});
+        Face octogono = new Face(8, new int[]{0,-18,-25,-18,0,18,25,18}, new int[]{0,7,25,43,50,43,25,7});
+        Face umMonteDePonto = new Face(16, new int[]{0,17,18,36,25,35,18,17,0,-15,-18,-35,-25,-36,-18,-15}, new int[]{0,-13,4,6,22,38,40,58,47,58,40,38,22,6,4,-13});
                 
         switch (fase){
             case 1:
@@ -52,7 +52,7 @@ public class Nivel extends JPanel {
                quadrado.desenhar(g);
                reta.translacao(355, 90);
                reta.desenhar(g);
-               triangulo.translacao(605, 90);
+               triangulo.translacao(605, 140);
                triangulo.desenhar(g);
                
                // Segunda Linha
@@ -61,7 +61,7 @@ public class Nivel extends JPanel {
                reta.rotacao(90, 380, 115);
                reta.translacao(0, 250);
                reta.desenhar(g);
-               pentagono.translacao(605, 340); 
+               pentagono.translacao(615, 390); 
                pentagono.desenhar(g);
                
                // Terceira Linha
@@ -86,7 +86,7 @@ public class Nivel extends JPanel {
             case 2:
                 
                 // Primeira Linha
-                triangulo.translacao(105, 90);
+                triangulo.translacao(105, 140);
                 triangulo.desenhar(g);
                 triangulo.rotacao(90, 130, 115);
                 triangulo.translacao(250, 0);
@@ -96,7 +96,7 @@ public class Nivel extends JPanel {
                 triangulo.desenhar(g);
                 
                 // Segunda Linha
-                pentagono.translacao(105, 340);
+                pentagono.translacao(115, 390);
                 pentagono.desenhar(g);
                 pentagono.rotacao(90, 130, 365);
                 pentagono.translacao(250, 0);
@@ -106,8 +106,8 @@ public class Nivel extends JPanel {
                 pentagono.desenhar(g);
                 
                 // Terceira Linha
-                trapezio.rotacao(-90, 25, 25);
-                trapezio.translacao(105, 590);
+                trapezio.rotacao(-90, 25, -15);
+                trapezio.translacao(105, 630);
                 trapezio.desenhar(g);
                 trapezio.rotacao(90, 130, 615);
                 trapezio.translacao(250, 0);
@@ -128,7 +128,7 @@ public class Nivel extends JPanel {
             case 3:
                 
                 //Primeira Linha
-                triangulo.translacao(105, 115);
+                triangulo.translacao(105, 165);
                 triangulo.desenhar(g);
                 triangulo.reflexaoY(115);
                 triangulo.desenhar(g);
@@ -187,7 +187,7 @@ public class Nivel extends JPanel {
             case 4:
                 
                 //Primeira Linha
-                triangulo.translacao(105, 90);
+                triangulo.translacao(105, 140);
                 triangulo.desenhar(g);
                 triangulo.translacao(250, 0);
                 triangulo.rotacao(180, 380, 115);
@@ -209,7 +209,7 @@ public class Nivel extends JPanel {
                 bandeira.desenhar(g);
                 
                 //Terceira Linha
-                estrela.translacao(105, 590);
+                estrela.translacao(105, 611);
                 estrela.desenhar(g);
                 estrela.translacao(250, 0);
                 estrela.rotacao(180, 380, 615);
@@ -235,7 +235,7 @@ public class Nivel extends JPanel {
                 
                 
                 //Primeira linha
-                hexagono.translacao(105, 90);
+                hexagono.translacao(105, 112);
                 hexagono.desenhar(g);
                 hexagono.translacao(217, -38);
                 hexagono.desenhar(g);
@@ -340,7 +340,7 @@ public class Nivel extends JPanel {
             case 6:
                 
                 //Primeira linha
-                hexagono.translacao(105, 90);
+                hexagono.translacao(105, 112);
                 hexagono.desenhar(g);
                 hexagono.translacao(257, -50);
                 hexagono.desenhar(g);
@@ -428,15 +428,15 @@ public class Nivel extends JPanel {
                 reta.desenhar(g);
                 quadrado.translacao(355, 90);
                 quadrado.desenhar(g);
-                hexagono.translacao(605, 90);
+                hexagono.translacao(605, 112);
                 hexagono.desenhar(g);
                 
                 //Segunda linha  
                 reta.translacao(0, 250);
                 reta.desenhar(g);
-                triangulo.translacao(355, 340);
+                triangulo.translacao(355, 390);
                 triangulo.desenhar(g);
-                pentagono.translacao(605, 340);
+                pentagono.translacao(615, 390);
                 pentagono.desenhar(g);
                 
                 //Terceira linha
@@ -447,9 +447,9 @@ public class Nivel extends JPanel {
                 
                 
                 //Respostas
-                octogono.translacao(885, 590);
+                octogono.translacao(910, 590);
                 octogono.desenhar(g);
-                trapezio.translacao(885, 340);
+                trapezio.translacao(885, 380);
                 trapezio.desenhar(g);
                 bandeira.translacao(885, 90);
                 bandeira.desenhar(g);
@@ -461,7 +461,7 @@ public class Nivel extends JPanel {
             case 8:
                 
                 //Primeira Linha
-                umMonteDePonto.translacao(90, 80);
+                umMonteDePonto.translacao(126, 98);
                 umMonteDePonto.desenhar(g);
                 reta.rotacao(-45, 100, 0);
                 reta.translacao(315, 0);
