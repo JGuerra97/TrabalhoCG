@@ -42,6 +42,7 @@ public class Nivel extends JPanel {
         Face bandeira = new Face(5, new int[]{0,0,50,50,25}, new int[]{0,50,50,0,25});
         Face hexagono = new Face(6, new int[]{0,13,38,50,37,12}, new int[]{0,-22,-22,0,22,22});
         Face octogono = new Face(8, new int[]{0,-18,-25,-18,0,18,25,18}, new int[]{0,7,25,43,50,43,25,7});
+        Face aviao = new Face(13, new int[]{0,6,11,14,30,37,36,56,45,38,54,19,14}, new int[]{0,14,19,54,38,45,56,36,37,30,14,11,6});
         Face umMonteDePonto = new Face(16, new int[]{0,17,18,36,25,35,18,17,0,-15,-18,-35,-25,-36,-18,-15}, new int[]{0,-13,4,6,22,38,40,58,47,58,40,38,22,6,4,-13});
                 
         switch (fase){
@@ -455,8 +456,8 @@ public class Nivel extends JPanel {
                 octogono.desenhar(g);
                 trapezio.translacao(885, 370);
                 trapezio.desenhar(g);
-                bandeira.translacao(885, 90);
-                bandeira.desenhar(g);
+                aviao.translacao(882,87);
+                aviao.desenhar(g);
                 
                 
                 break;
