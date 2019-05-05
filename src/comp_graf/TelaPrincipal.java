@@ -33,12 +33,12 @@ public class TelaPrincipal extends JFrame {
         JPanel panel = new JPanel(null);
         this.add(panel);
         JButton botao = new JButton("COMEÇAR");
-        botao.setBounds((this.getWidth()/2) - 50, (this.getHeight()/2) - 25, 100, 40);
+        botao.setBounds((this.getWidth()/2) - 50, (this.getHeight()/2) + 175, 100, 40);
         botao.setFont(new Font("Arial", Font.BOLD, 12));
         panel.add(botao);
         
         JLabel label = new JLabel("TESTE DE QI");
-        label.setBounds((this.getWidth()/2) - 75, (this.getHeight()/2) - 100, 150, 40);
+        label.setBounds((this.getWidth()/2) - 75, (this.getHeight()/2) + 100, 150, 40);
         label.setFont(new Font("Arial", Font.BOLD, 24));
         panel.add(label);
 

@@ -37,6 +37,7 @@ public class Nivel extends JPanel {
            
         Face retangulo = new Face(4, new int[]{0,0,50,50}, new int[]{0,50,50,0});
         retangulo.escalaX(2, 0);
+        retangulo.transformar();
         
         Face estrela = new Face(10, new int[]{0,19,25,31,50,35,40,25,10,15}, new int[]{0,0,-21,0,0,11,29,18,29,11});
         Face bandeira = new Face(5, new int[]{0,0,50,50,25}, new int[]{0,50,50,0,25});
@@ -59,8 +60,8 @@ public class Nivel extends JPanel {
                // Segunda Linha
                quadrado.translacao(0, 240);
                quadrado.desenhar(g);
-               reta.rotacao(90, 380, 115);
                reta.translacao(0, 240);
+               reta.rotacao(90, 380, 115);
                reta.desenhar(g);
                pentagono.translacao(615, 380); 
                pentagono.desenhar(g);
@@ -78,8 +79,8 @@ public class Nivel extends JPanel {
                triangulo.desenhar(g);
                quadrado.translacao(780, 0);
                quadrado.desenhar(g);
-               reta.rotacao(45, 380, 595);
                reta.translacao(530, 0);
+               reta.rotacao(45, 380, 595);
                reta.desenhar(g);
 
                break;
@@ -89,39 +90,39 @@ public class Nivel extends JPanel {
                 // Primeira Linha
                 triangulo.translacao(105, 140);
                 triangulo.desenhar(g);
+                triangulo.translacao(250, 0);
                 triangulo.rotacao(90, 130, 115);
-                triangulo.translacao(250, 0);
                 triangulo.desenhar(g);
-                triangulo.reflexaoX(380);
                 triangulo.translacao(250, 0);
+                triangulo.reflexaoX(380);
                 triangulo.desenhar(g);
                 
                 // Segunda Linha
                 pentagono.translacao(115, 380);
                 pentagono.desenhar(g);
+                pentagono.translacao(250, 0);
                 pentagono.rotacao(90, 130, 355);
-                pentagono.translacao(250, 0);
                 pentagono.desenhar(g);
-                pentagono.reflexaoX(380);
                 pentagono.translacao(250, 0);
+                pentagono.reflexaoX(380);
                 pentagono.desenhar(g);
                 
                 // Terceira Linha
-                trapezio.rotacao(-90, 25, -15);
                 trapezio.translacao(105, 610);
+                trapezio.rotacao(-90, 25, -15);
                 trapezio.desenhar(g);
-                trapezio.rotacao(90, 130, 595);
                 trapezio.translacao(250, 0);
+                trapezio.rotacao(90, 130, 595);
                 trapezio.desenhar(g);
                 
                 // Respostas
                 quadrado.translacao(885, 90);
                 quadrado.desenhar(g);
+                trapezio.reflexaoY(355);
                 trapezio.translacao(530, -240);
-                trapezio.reflexaoY(355);
                 trapezio.desenhar(g);
-                trapezio.reflexaoY(355);
                 trapezio.translacao(0, 240);
+                trapezio.reflexaoY(355);
                 trapezio.desenhar(g);
                 
                 break;
@@ -133,8 +134,8 @@ public class Nivel extends JPanel {
                 triangulo.desenhar(g);
                 triangulo.reflexaoY(115);
                 triangulo.desenhar(g);
-                reta.translacao(355,90);
                 reta.rotacao(-45, 380, 115);
+                reta.translacao(355,90);
                 reta.desenhar(g);
                 triangulo.translacao(500, -12);
                 triangulo.desenhar(g);
@@ -144,8 +145,8 @@ public class Nivel extends JPanel {
                 //Segunda Linha
                 retangulo.translacao(80, 330);
                 retangulo.desenhar(g);
-                reta.translacao(0, 240);
                 reta.rotacao(90, 380, 355);
+                reta.translacao(0, 240);
                 reta.desenhar(g);
                 quadrado.translacao(568, 330);
                 quadrado.desenhar(g);
@@ -154,22 +155,22 @@ public class Nivel extends JPanel {
 
                 
                 //Terceira Linha
-                quadrado.translacao(-537, 240);
                 quadrado.escalaGlobal(2, 130, 595);
+                quadrado.translacao(-537, 240);
                 quadrado.desenhar(g);
-                quadrado.escalaGlobal(0.5, 130, 595);
-                quadrado.translacao(537, -240);
                 reta.translacao(0, 240);
                 reta.desenhar(g);
                 reta.rotacao(90, 380, 595);
                 reta.desenhar(g);
                 
                 //Respostas
-                retangulo.translacao(780, -240);
                 retangulo.rotacao(90, 910, 115);
+                retangulo.translacao(780, -240);
                 retangulo.desenhar(g);
                 
                 quadrado.translacao(206, -37);    // 243 - 37 desloca ele para cima
+                quadrado.translacao(537, -240);
+                quadrado.escalaGlobal(0.5, 130, 595);
                 quadrado.desenhar(g);
                 quadrado.reflexaoY(355);
                 quadrado.desenhar(g);
@@ -190,8 +191,8 @@ public class Nivel extends JPanel {
                 //Primeira Linha
                 triangulo.translacao(105, 140);
                 triangulo.desenhar(g);
-                triangulo.translacao(250, 0);
                 triangulo.rotacao(180, 380, 115);
+                triangulo.translacao(250, 0);
                 triangulo.desenhar(g);
                 triangulo.translacao(250, 0);
                 triangulo.desenhar(g);
@@ -201,8 +202,8 @@ public class Nivel extends JPanel {
                 //Segunda Linha
                 bandeira.translacao(105, 330);
                 bandeira.desenhar(g);
-                bandeira.translacao(250, 0);
                 bandeira.rotacao(180, 380, 355);
+                bandeira.translacao(250, 0);
                 bandeira.desenhar(g);
                 bandeira.translacao(250, 0);
                 bandeira.desenhar(g);
@@ -212,8 +213,8 @@ public class Nivel extends JPanel {
                 //Terceira Linha
                 estrela.translacao(105, 591);
                 estrela.desenhar(g);
-                estrela.translacao(250, 0);
                 estrela.rotacao(180, 380, 595);
+                estrela.translacao(250, 0);
                 estrela.desenhar(g);
                
                //Respostas
@@ -468,8 +469,8 @@ public class Nivel extends JPanel {
                 //Primeira Linha
                 umMonteDePonto.translacao(126, 92);
                 umMonteDePonto.desenhar(g);
-                reta.rotacao(-45, 100, 0);
                 reta.translacao(315, 0);
+                reta.rotacao(-45, 100, 0);
                 reta.desenhar(g);
                 reta.translacao(0, 100);
                 reta.desenhar(g);
@@ -479,9 +480,9 @@ public class Nivel extends JPanel {
                 //Segunda Linha
                 umMonteDePonto.translacao(-505, 240);
                 umMonteDePonto.desenhar(g);
-                retangulo.escalaX(1.3, 0);
-                retangulo.rotacao(90, 25, 25);
                 retangulo.translacao(355, 290);
+                retangulo.rotacao(90, 25, 25);
+                retangulo.escalaX(1.3, 0);
                 retangulo.desenhar(g);
                 
                 //Terceira Linha
@@ -493,15 +494,15 @@ public class Nivel extends JPanel {
                 quadrado.desenhar(g);
                 
                 //Respostas
-                reta.rotacao(90, 350, 190);
                 reta.translacao(540, -110);
+                reta.rotacao(90, 350, 190);
                 reta.desenhar(g);
-                retangulo.escalaX(0.1, 300);
-                retangulo.escalaY(0.5, 300);
                 retangulo.translacao(600, 25);
+                retangulo.escalaY(0.5, 300);
+                retangulo.escalaX(0.1, 300);
                 retangulo.desenhar(g);
-                retangulo.rotacao(90, 900, 360);
                 retangulo.translacao(0, 240);
+                retangulo.rotacao(90, 900, 360);
                 retangulo.desenhar(g);
                 
                 
