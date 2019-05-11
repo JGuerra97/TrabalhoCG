@@ -29,18 +29,48 @@ public class TelaPrincipal extends JFrame {
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setResizable(false);
         this.setVisible(true);
-
-        JPanel panel = new JPanel(null);
-        this.add(panel);
-        JButton botao = new JButton("COMEÇAR");
-        botao.setBounds((this.getWidth()/2) - 50, (this.getHeight()/2) + 175, 100, 40);
-        botao.setFont(new Font("Arial", Font.BOLD, 12));
-        panel.add(botao);
         
-        JLabel label = new JLabel("TESTE DE QI");
-        label.setBounds((this.getWidth()/2) - 75, (this.getHeight()/2) + 100, 150, 40);
+        JPanel container = new JPanel();
+        container.setLayout(new BoxLayout(container, BoxLayout.Y_AXIS));
+        
+        JPanel panel = new JPanel();
+        JButton botao = new JButton("COMEÇAR");
+        botao.setFont(new Font("Arial", Font.BOLD, 12));
+        
+        
+        JLabel label = new JLabel("TESTE DE QI         ");
+//        label.setBounds(445, 0, 150, 40);
         label.setFont(new Font("Arial", Font.BOLD, 24));
-        panel.add(label);
+        panel.add(label, BorderLayout.WEST);
+    
+        panel.setLayout( new FlowLayout() );
+        panel.setPreferredSize( new Dimension( 100, 40 ) );
+        panel.setMinimumSize( new Dimension( 20, 50 ) );
+        panel.add(botao, BorderLayout.EAST);
+        
+        container.add(panel);
+        Nivel nivel= new Nivel();
+        nivel.setFase(0);
+        JPanel panel2 = nivel;
+        panel2.setLayout( new BorderLayout() );
+        panel2.setPreferredSize( new Dimension( 600, 100 ) );
+        panel2.setMinimumSize( new Dimension( 500, 100 ) );
+        container.add(panel2);      
+        getContentPane().add(container);
+        revalidate();
+        repaint();
+
+//        JPanel panel = new JPanel(null);
+//        this.add(panel);
+//        JButton botao = new JButton("COMEÇAR");
+//        botao.setBounds(470, 700, 100, 40);
+//        botao.setFont(new Font("Arial", Font.BOLD, 12));
+//        panel.add(botao);
+//        
+//        JLabel label = new JLabel("TESTE DE QI");
+//        label.setBounds(445, 625, 150, 40);
+//        label.setFont(new Font("Arial", Font.BOLD, 24));
+//        panel.add(label);
 
         botao.addActionListener(new ActionListener() {
             @Override
@@ -78,7 +108,7 @@ public class TelaPrincipal extends JFrame {
         panel2.setPreferredSize( new Dimension( 600, 100 ) );
         panel2.setMinimumSize( new Dimension( 500, 100 ) );
         container.add(panel2);      
-        getContentPane().add(container);       
+        getContentPane().add(container);
         revalidate();
         repaint();
        
