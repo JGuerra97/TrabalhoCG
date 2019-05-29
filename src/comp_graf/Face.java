@@ -1,6 +1,8 @@
 package comp_graf;
 
+import java.awt.Color;
 import java.awt.Graphics;
+import java.util.Arrays;
 
 public class Face {
     
@@ -210,13 +212,54 @@ public class Face {
     }
     
     public void desenhar(Graphics g){
-        
         transformar();
-        
         for(int i = 0; i < this.nVertices-1; i++){
             g.drawLine(vertices[i].x, vertices[i].y, vertices[i+1].x, vertices[i+1].y);
         }
         g.drawLine(vertices[this.nVertices-1].x, vertices[this.nVertices-1].y, vertices[0].x, vertices[0].y);
+        
     }
+    
+    public void fill(Graphics g){
+        
+        transformar();
+//        g.setColor(Color.red);
+        
+        int[] x = new int[nVertices];
+        int[] y = new int[nVertices];
+        
+        for(int i = 0; i < this.nVertices-1; i++){
+            g.drawLine(vertices[i].x, vertices[i].y, vertices[i+1].x, vertices[i+1].y);
+            x[i] = vertices[i].x;
+            y[i] = vertices[i].y;
+        }
+        g.drawLine(vertices[this.nVertices-1].x, vertices[this.nVertices-1].y, vertices[0].x, vertices[0].y);
+        g.fillPolygon(x, y, nVertices);
+    }
+    
+//    public void FillPolygon (int np, int[] x, int[] y){
+//        
+//        int ymin = Arrays.stream(y).min().getAsInt();
+//        int ymax = Arrays.stream(y).max().getAsInt();
+//        /* calcula y max e min dos vértices*/
+//        . . .
+//        for(int ys=ymin; ys<=ymax; ys--) /* para cada linha de scan */
+//        {
+//        int num_inters = 0;
+//        for(int i=0; i<np; i++) /* para cada aresta */
+//        {
+//        int yi = y[i];
+//        int yf = y[(i+1)%np];
+//        if (yi!=yf && ys >= Math.min(yi,yf) && ys < Math.max(yi,yf) )
+//        {
+//        vxs[num_inters] = x[i] +
+//        (ys-yi)*(x[(i+1)%np]-x[i])/(yf-yi);
+//        num_inters++;
+//        }
+//        }
+//        ordena(vxs,0,num_inters-1); /* ordena as interseções */
+//        for (i=0;i<num_inters;i+=2)
+//        if (vxs[i]+1 <= vxs[i+1]) ScanLine(vxs[i],vxs[i+1],ys);
+//    }
 
 }

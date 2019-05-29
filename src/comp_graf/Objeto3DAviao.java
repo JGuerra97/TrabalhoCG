@@ -108,4 +108,24 @@ public class Objeto3DAviao {
             f.desenhar(g);
         }
     }
+    
+    public void desenharSolido(Graphics g){
+        int[] v1 = new int[3];
+        int[] v2 = new int[3];
+        int[] normal = new int[3];
+        for(Face f : faces){
+            v1[0] = f.vertices[1].x - f.vertices[0].x;
+            v1[1] = f.vertices[1].y - f.vertices[0].y;
+            v1[2] = f.vertices[1].z - f.vertices[0].z;
+            v2[0] = f.vertices[2].x - f.vertices[1].x;
+            v2[1] = f.vertices[2].y - f.vertices[1].y;
+            v2[2] = f.vertices[2].z - f.vertices[1].z;
+            normal[0] = v1[1]*v2[2] - v1[2]*v2[1];
+            normal[1] = v1[2]*v2[0] - v1[0]*v2[2];
+            normal[2] = v1[0]*v2[1] - v1[1]*v2[0];
+            if (500 * normal[2] >= 0){
+                f.fill(g);
+            }
+        }
+    }
 }

@@ -521,22 +521,38 @@ public class TelaPrincipal extends JFrame {
         });
     }
     
-    public void fimDeJogo() {        
+    public void fimDeJogo() {
         
         getContentPane().removeAll();
+
+        JPanel container = new JPanel();
+        container.setLayout(new BoxLayout(container, BoxLayout.Y_AXIS));
         
-        JPanel panel = new JPanel(null);
-        this.add(panel);
-        JButton botao = new JButton("RECOMEÇAR");
-        botao.setBounds((this.getWidth()/2) - 60, (this.getHeight()/2) - 25, 120, 40);
-        botao.setFont(new Font("Arial", Font.BOLD, 12));
-        panel.add(botao);
-        
-        JLabel label = new JLabel("VOCÊ ACERTOU "+ resultado + " DE 8 QUESTÕES");
+        JPanel panel = new JPanel();
+
+        JLabel label = new JLabel("VOCÊ ACERTOU "+ resultado + " DE 8 QUESTÕES - ");
         label.setBounds((this.getWidth()/2) - 210, (this.getHeight()/2) - 100, 420, 40);
         label.setFont(new Font("Arial", Font.BOLD, 24));
         panel.add(label);
         
+        JButton botao = new JButton("RECOMEÇAR");
+        botao.setBounds((this.getWidth()/2) - 60, (this.getHeight()/2) - 25, 120, 40);
+        botao.setFont(new Font("Arial", Font.BOLD, 12));
+        panel.add(botao);
+
+        panel.setLayout(new FlowLayout());
+        panel.setPreferredSize(new Dimension(100, 40));
+        panel.setMinimumSize(new Dimension(20, 50));
+
+        container.add(panel);
+        Nivel nivel = new Nivel();
+        nivel.setFase(9);
+        JPanel panel2 = nivel;
+        panel2.setLayout(new BorderLayout());
+        panel2.setPreferredSize(new Dimension(600, 100));
+        panel2.setMinimumSize(new Dimension(500, 100));
+        container.add(panel2);
+        getContentPane().add(container);
         revalidate();
         repaint();
         
