@@ -1,5 +1,6 @@
 package comp_graf;
 
+import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.util.Arrays;
@@ -213,27 +214,31 @@ public class Face {
     
     public void desenhar(Graphics g){
         transformar();
+        g.setColor(Color.black);
         for(int i = 0; i < this.nVertices-1; i++){
             g.drawLine(vertices[i].x, vertices[i].y, vertices[i+1].x, vertices[i+1].y);
+            
         }
         g.drawLine(vertices[this.nVertices-1].x, vertices[this.nVertices-1].y, vertices[0].x, vertices[0].y);
+        
         
     }
     
     public void fill(Graphics g){
         
         transformar();
-//        g.setColor(Color.red);
+      g.setColor(Color.red);
         
         int[] x = new int[nVertices];
         int[] y = new int[nVertices];
         
-        for(int i = 0; i < this.nVertices-1; i++){
-            g.drawLine(vertices[i].x, vertices[i].y, vertices[i+1].x, vertices[i+1].y);
+        for(int i = 0; i < this.nVertices; i++){
+           // g.drawLine(vertices[i].x, vertices[i].y, vertices[i+1].x, vertices[i+1].y);
             x[i] = vertices[i].x;
             y[i] = vertices[i].y;
+            
         }
-        g.drawLine(vertices[this.nVertices-1].x, vertices[this.nVertices-1].y, vertices[0].x, vertices[0].y);
+        //g.drawLine(vertices[this.nVertices-1].x, vertices[this.nVertices-1].y, vertices[0].x, vertices[0].y);
         g.fillPolygon(x, y, nVertices);
     }
     

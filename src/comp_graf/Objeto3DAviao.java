@@ -3,7 +3,9 @@ package comp_graf;
 import java.awt.Graphics;
 
 public class Objeto3DAviao {
-    
+            int[] profundidade= new int[14];
+            int[] produto_interno_normal= new int[14];
+
     protected final Face[] faces = new Face[14];
     
     public Objeto3DAviao(){
@@ -103,12 +105,19 @@ public class Objeto3DAviao {
     }
     
     public void desenhar(Graphics g){
-        
-        for(Face f : faces){
-            f.desenhar(g);
+         SortByDepth(g);
+         BackFaceCulling(g);
+         
+        for(int i=0; i<14;i++){
+            
+            faces[i].fill(g);
+            faces[i].desenhar(g);
+
+
         }
+        
     }
-    
+    /*
     public void desenharSolido(Graphics g){
         int[] v1 = new int[3];
         int[] v2 = new int[3];
@@ -128,4 +137,49 @@ public class Objeto3DAviao {
             }
         }
     }
+    */
+        public void BackFaceCulling(Graphics screen) {
+        int[] v1 = new int[3];
+        int[] v2 = new int[3];
+        int[] normal = new int[3];
+       for (int w = 0; w < 14 ; w++) {        
+          // Cross Product
+            v1[0] = faces[w].vertices[1].x - faces[w].vertices[0].x;
+            v1[1] = faces[w].vertices[1].y - faces[w].vertices[0].y;
+            v1[2] = faces[w].vertices[1].z - faces[w].vertices[0].z;
+            v2[0] = faces[w].vertices[2].x - faces[w].vertices[1].x;
+            v2[1] = faces[w].vertices[2].y - faces[w].vertices[1].y;
+            v2[2] = faces[w].vertices[2].z - faces[w].vertices[1].z;
+            normal[0] = v1[1]*v2[2] - v1[2]*v2[1];
+            normal[1] = v1[2]*v2[0] - v1[0]*v2[2];
+            normal[2] = v1[0]*v2[1] - v1[1]*v2[0];
+          // DotProduct uses POV vector 0,0,POV  as x1,y1,z1
+          produto_interno_normal[w]= 0 * normal[0]  + 0 * normal[1] + 500 * normal[2];
+       }
+    }
+    
+    
+    public void SortByDepth(Graphics g) {
+        int profundidade_temp;
+        Face temp;
+        
+         for (int w=0; w<14; w++) {
+                  if(faces[w].nVertices==3)
+                          profundidade[w] = (faces[w].vertices[0].z+faces[w].vertices[1].z+faces[w].vertices[2].z) / 3;
+                  else if(faces[w].nVertices==4)
+                          profundidade[w] = (faces[w].vertices[0].z+faces[w].vertices[1].z+faces[w].vertices[2].z+faces[w].vertices[3].z) / 4;                     
+       }
+         for (int i = 0; i < 13 ; i++) {
+           for (int j = 0; j < 14; j++) {
+             if (profundidade[i] < profundidade[j]) {
+                 temp= faces[i];
+                 faces[i]=faces[j];
+                 faces[j]=temp;
+                    profundidade_temp= profundidade[i];  
+                    profundidade[i]=profundidade[j];
+                    profundidade[j]=profundidade_temp;
+             }
+          }
+       }
+    }   
 }

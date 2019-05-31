@@ -57,9 +57,11 @@ public class Nivel extends JPanel {
             case 0:
 
                aviao.translacao(350, 350, 0);
-               aviao.rotacaoPlanoYZ(-35.26, 0, 0, 0);
-               aviao.rotacaoPlanoXZ(45, 0, 0, 0);
+               aviao.rotacaoPlanoYZ(-36.25, 0, 0, 0);
+               aviao.rotacaoPlanoXZ(150, 0, 0, 0);
+               
                aviao.desenhar(g);
+               
                break;
 
             case 1:
