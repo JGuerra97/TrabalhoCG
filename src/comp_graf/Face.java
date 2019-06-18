@@ -3,6 +3,7 @@ package comp_graf;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Graphics;
+import static java.lang.Math.cos;
 import java.util.Arrays;
 
 public class Face {
@@ -173,6 +174,21 @@ public class Face {
         translacao(-referenciax, -referenciay, -referenciaz);
     }
     
+    public void rotacaoQuaternio(float referenciax, float referenciay, float referenciaz, float nx, float ny, float nz, double angulo){
+        
+        Quaternio q = new Quaternio(nx, ny, nz, angulo);
+        Quaternio q_conjugado;
+        q_conjugado = q.calculaConjugado(q);
+        double rq0, rq1, rq2, rq3;
+        
+        // Fazer a multiplicação  q p q* 
+        rq0 = 0;
+        rq1 =   q.getQ1() * referenciax  * q_conjugado.getQ1();
+        rq2 =   q.getQ2() * referenciay  * q_conjugado.getQ2();
+        rq3 =   q.getQ3() * referenciaz  * q_conjugado.getQ3();
+        
+}
+
     public void reflexaoX(int referenciax){
         
         translacao(referenciax, 0, 0);

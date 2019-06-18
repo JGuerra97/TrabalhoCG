@@ -1,6 +1,7 @@
 package comp_graf;
 
 import java.awt.Graphics;
+import static java.lang.Math.cos;
 
 public class Objeto3DAviao {
             int[] profundidade= new int[14];
