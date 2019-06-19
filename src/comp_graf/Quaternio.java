@@ -3,29 +3,32 @@ package comp_graf;
 
 public class Quaternio {
    
-    private float nx,ny,nz;
+    private int nx,ny,nz;
     double angulo;
+    private double    q0;
+    private double    q1;   
+    private double    q2;  
+    private double    q3;  
     
-    public Quaternio(float nx, float ny, float nz, double angulo) {
+    
+    public Quaternio(int nx, int ny, int nz, double angulo) {
         this.nx = nx;
         this.ny = ny;
         this.nz = nz;
-        this.angulo = angulo; 
+        this.angulo = angulo;     
+        double seno = Math.sin(Math.toRadians(angulo/2));
+        double cosseno = Math.cos(Math.toRadians(angulo/2));
+        q0 = cosseno;       
+        q1 = seno * nx;   
+        q2 = seno * ny;  
+        q3 = seno * nz;    
     }
-    
-    double seno = Math.sin(Math.toRadians(angulo));
-    double cosseno = Math.cos(Math.toRadians(angulo));
-    
-    private double    q0= cosseno/2.0;       // Componente do ângulo
-    private double    q1= seno/2.0 * nx;   
-    private double    q2= seno/2.0 * ny;  
-    private double    q3= seno/2.0 * nz;    
-    
+
     public Quaternio calculaConjugado(Quaternio q){
         q.q0 = q0;
         q.q1 = -q1;
         q.q2 = -q2;
-        q.q3 = -q2;
+        q.q3 = -q3;
         return q;
     }
 

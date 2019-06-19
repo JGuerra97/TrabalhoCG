@@ -87,6 +87,11 @@ public class Objeto3DAviao {
         }
     }
     
+    public void rotacaoQuaternio(double angulo, int nx, int ny, int nz){
+        for(Face f : faces){
+            f.rotacaoQuaternio(angulo, nx, ny, nz);
+        }
+    }
     public void reflexaoX(int referenciax){
         for(Face f : faces){
             f.reflexaoX(referenciax);
@@ -111,7 +116,7 @@ public class Objeto3DAviao {
          
         for(int i=0; i<14;i++){
             
-            faces[i].fill(g);
+            //faces[i].fill(g);
             faces[i].desenhar(g);
 
 

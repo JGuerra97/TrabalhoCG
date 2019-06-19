@@ -174,21 +174,53 @@ public class Face {
         translacao(-referenciax, -referenciay, -referenciaz);
     }
     
-    public void rotacaoQuaternio(float referenciax, float referenciay, float referenciaz, float nx, float ny, float nz, double angulo){
+    private double calculaProdutoInterno(double v1x, double v1y, double v1z, double v2x, double v2y, double v2z){
+        
+        return v1x*v2x+v1y*v2y+v1z*v2z;
+    }
+    
+    private double[] calculaProdutoVetorial(double v1x, double v1y, double v1z, double v2x, double v2y, double v2z){
+        
+        return new double[] {v1y * v2z - v1z * v2y, v1z * v2x - v1x * v2z, v1x * v2y - v1y * v2z};
+    }
+    
+    public int[] rotacaoPontoQuaternio(int referenciax, int referenciay, int referenciaz, int nx, int ny, int nz, double angulo){
         
         Quaternio q = new Quaternio(nx, ny, nz, angulo);
         Quaternio q_conjugado;
         q_conjugado = q.calculaConjugado(q);
         double rq0, rq1, rq2, rq3;
-        
+        double[] prodVet = calculaProdutoVetorial(q.getQ1(), q.getQ2(), q.getQ3(), referenciax, referenciay, referenciaz);
         // Fazer a multiplicação  q p q* 
+
         rq0 = 0;
-        rq1 =   q.getQ1() * referenciax  * q_conjugado.getQ1();
-        rq2 =   q.getQ2() * referenciay  * q_conjugado.getQ2();
-        rq3 =   q.getQ3() * referenciaz  * q_conjugado.getQ3();
-        
+        //System.out.println("XXXXXXXXX "+referenciax+" "+ q.getQ0());
+        rq1 =   q.getQ0() * q.getQ0() * referenciax  - (calculaProdutoInterno(q.getQ1(), q.getQ2(), q.getQ3(), q.getQ1(), q.getQ2(), q.getQ3())) * referenciax 
+                + 2 * (calculaProdutoInterno(q.getQ1(), q.getQ2(), q.getQ3(),referenciax, referenciay, referenciaz)) * q.getQ1()
+                   + 2 * q.getQ0() * prodVet[0] ;                                                                                               
+       
+        rq2 =    q.getQ0() * q.getQ0() * referenciay - (calculaProdutoInterno(q.getQ1(), q.getQ2(), q.getQ3(), q.getQ1(), q.getQ2(), q.getQ3())) * referenciay 
+                   + 2 * (calculaProdutoInterno(q.getQ1(), q.getQ2(), q.getQ3(),referenciax, referenciay, referenciaz)) * q.getQ2()
+                   + 2 * q.getQ0() * prodVet[1];                                                                                              
+       
+        rq3 =    q.getQ0() * q.getQ0() * referenciaz - (calculaProdutoInterno(q.getQ1(), q.getQ2(), q.getQ3(), q.getQ1(), q.getQ2(), q.getQ3())) * referenciaz 
+                   + 2 * (calculaProdutoInterno(q.getQ1(), q.getQ2(), q.getQ3(),referenciax, referenciay, referenciaz)) * q.getQ3()
+                   + 2 * q.getQ0() * prodVet[2];                                                                                               
+       
+        return new int[] {(int)rq1, (int)rq2, (int)rq3};
 }
 
+    public void rotacaoQuaternio(double angulo, int nx, int ny, int nz){
+        for(int i=0; i < nVertices; i++){
+                        System.out.println( "AAAAAAABBBBBB "+vertices[i].x+ " " +vertices[i].y+ " " + vertices[i].z);
+            int[] temp = rotacaoPontoQuaternio(vertices[i].x, vertices[i].y, vertices[i].z, nx, ny, nz, angulo);
+            vertices[i].x = temp[0];
+            vertices[i].y = temp[1];
+            vertices[i].z = temp[2];
+            System.out.println( "AAAAAAA "+vertices[i].x+ " " +vertices[i].y+ " " + vertices[i].z);
+        }
+    }
+    
     public void reflexaoX(int referenciax){
         
         translacao(referenciax, 0, 0);
