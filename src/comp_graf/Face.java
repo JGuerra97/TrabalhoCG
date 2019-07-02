@@ -212,12 +212,12 @@ public class Face {
 
     public void rotacaoQuaternio(double angulo, int nx, int ny, int nz){
         for(int i=0; i < nVertices; i++){
-                        System.out.println( "AAAAAAABBBBBB "+vertices[i].x+ " " +vertices[i].y+ " " + vertices[i].z);
+         //    System.out.println( "AAAAAAABBBBBB "+vertices[i].x+ " " +vertices[i].y+ " " + vertices[i].z);
             int[] temp = rotacaoPontoQuaternio(vertices[i].x, vertices[i].y, vertices[i].z, nx, ny, nz, angulo);
             vertices[i].x = temp[0];
             vertices[i].y = temp[1];
             vertices[i].z = temp[2];
-            System.out.println( "AAAAAAA "+vertices[i].x+ " " +vertices[i].y+ " " + vertices[i].z);
+         //   System.out.println( "AAAAAAA "+vertices[i].x+ " " +vertices[i].y+ " " + vertices[i].z);
         }
     }
     
