@@ -111,8 +111,8 @@ public class Objeto3DAviao {
     }
     
     public void desenhar(Graphics g){
-         SortByDepth(g);
-         BackFaceCulling(g);
+//         SortByDepth(g);
+//         BackFaceCulling(g);
          
         for(int i=0; i<14;i++){
             

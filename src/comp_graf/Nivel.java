@@ -90,8 +90,9 @@ public class Nivel extends JPanel {
                 angulo = teclado.nextDouble();
 
                 g.drawLine(x1, y1, x2, y2);
-                int norma = (int) Math.sqrt((x2 - x1) * (x2 - x1) + (y2 - y1) * (y2 - y1) + (z2 - z1) * (z2 - z1));
-                aviao.rotacaoQuaternio(angulo, ((x2 - x1) / norma), ((y2 - y1) / norma), ((z2 - z1) / norma));
+                double norma = Math.sqrt((x2 - x1) * (x2 - x1) + (y2 - y1) * (y2 - y1) + (z2 - z1) * (z2 - z1));
+                System.out.println("NORMA: " + norma);
+                aviao.rotacaoQuaternio(angulo, (int)((x2 - x1) / norma), (int)((y2 - y1) / norma), (int)((z2 - z1) / norma));
                 aviao.desenhar(g);
                 /*for(int i=0; i<50; i++){
                aviao.desenhar(g);
@@ -555,7 +556,7 @@ public class Nivel extends JPanel {
                 break;
 
             default:
-
+                System.out.println("ENTROU NO CASE DEFAULT");
                 break;
         }
     }

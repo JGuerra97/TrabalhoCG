@@ -12,7 +12,7 @@ import java.util.Arrays;
 public class Face {
 
     protected final int nVertices;
-    protected final Vertice[] vertices;
+    protected Vertice[] vertices;
     protected double[][] matrizTransformacao = {{1, 0, 0, 0},
     {0, 1, 0, 0},
     {0, 0, 1, 0},
@@ -42,15 +42,6 @@ public class Face {
                 }
             }
         }
-
-        matrizTransformacao = resultado;
-        for (int i = 0; i < 3; i++) {
-            for (int j = 0; j < 3; j++) {
-                System.out.print(matrizTransformacao[i][j] + " ");
-            }
-            System.out.println("");
-        }
-        System.out.println("");
     }
 
     public void transformar() {
@@ -70,7 +61,6 @@ public class Face {
     }
 
     public void translacao(int x, int y, int z) {
-        System.out.println("Translação: x = " + x + "\ty = " + y);
         mudaMatrizTransformacao(new double[][]{{1, 0, 0, x},
         {0, 1, 0, y},
         {0, 0, 1, z},
@@ -81,7 +71,6 @@ public class Face {
 
         translacao(referenciax, 0, 0);
 
-        System.out.println("Escala X: " + sx);
         mudaMatrizTransformacao(new double[][]{{sx, 0, 0, 0},
         {0, 1, 0, 0},
         {0, 0, 1, 0},
@@ -94,7 +83,6 @@ public class Face {
 
         translacao(0, referenciay, 0);
 
-        System.out.println("Escala Y: " + sy);
         mudaMatrizTransformacao(new double[][]{{1, 0, 0, 0},
         {0, sy, 0, 0},
         {0, 0, 1, 0},
@@ -107,7 +95,6 @@ public class Face {
 
         translacao(0, 0, referenciaz);
 
-        System.out.println("Escala Z: " + sz);
         mudaMatrizTransformacao(new double[][]{{1, 0, 0, 0},
         {0, 1, 0, 0},
         {0, 0, sz, 0},
@@ -120,7 +107,6 @@ public class Face {
 
         translacao(referenciax, referenciay, referenciaz);
 
-        System.out.println("Escala Global: " + escala);
         mudaMatrizTransformacao(new double[][]{{escala, 0, 0, 0},
         {0, escala, 0, 0},
         {0, 0, escala, 0},
@@ -136,7 +122,6 @@ public class Face {
 
         translacao(referenciax, referenciay, referenciaz);
 
-        System.out.println("Rotação no Plano XY: " + angulo);
         mudaMatrizTransformacao(new double[][]{{cosseno, -seno, 0, 0},
         {seno, cosseno, 0, 0},
         {0, 0, 1, 0},
@@ -152,7 +137,6 @@ public class Face {
 
         translacao(referenciax, referenciay, referenciaz);
 
-        System.out.println("Rotação no Plano YZ: " + angulo);
         mudaMatrizTransformacao(new double[][]{{1, 0, 0, 0},
         {0, cosseno, -seno, 0},
         {0, seno, cosseno, 0},
@@ -168,7 +152,6 @@ public class Face {
 
         translacao(referenciax, referenciay, referenciaz);
 
-        System.out.println("Rotação no Plano XZ: " + angulo);
         mudaMatrizTransformacao(new double[][]{{cosseno, 0, seno, 0},
         {0, 1, 0, 0},
         {-seno, 0, cosseno, 0},
@@ -215,12 +198,12 @@ public class Face {
 
     public void rotacaoQuaternio(double angulo, int nx, int ny, int nz) {
         for (int i = 0; i < nVertices; i++) {
-            //    System.out.println( "AAAAAAABBBBBB "+vertices[i].x+ " " +vertices[i].y+ " " + vertices[i].z);
             int[] temp = rotacaoPontoQuaternio(vertices[i].x, vertices[i].y, vertices[i].z, nx, ny, nz, angulo);
+            System.out.println("PONTO ANTES: " + vertices[i].x + ", " + vertices[i].y + ", " + vertices[i].z);
             vertices[i].x = temp[0];
             vertices[i].y = temp[1];
             vertices[i].z = temp[2];
-            //   System.out.println( "AAAAAAA "+vertices[i].x+ " " +vertices[i].y+ " " + vertices[i].z);
+            System.out.println("PONTO DEPOIS: " + vertices[i].x + ", " + vertices[i].y + ", " + vertices[i].z);
         }
     }
 
@@ -284,9 +267,9 @@ public class Face {
 
         }
 
-        List<Tuple3d> renderingPoints = new ArrayList<Tuple3d>();
+        ArrayList<Tuple3d> renderingPoints = new ArrayList<>();
 
-        List<Tuple3d> controlPoints = new ArrayList<Tuple3d>();
+        ArrayList<Tuple3d> controlPoints = new ArrayList<>();
 
         //generate the end and control points
         for (int i = 1; i < controls.length - 1; i += 2) {
@@ -551,10 +534,10 @@ public class Face {
         g.setColor(Color.black);
         for (int i = 0; i < this.nVertices - 1; i++) {
             g.drawLine(vertices[i].x, vertices[i].y, vertices[i + 1].x, vertices[i + 1].y);
-
+            System.out.println("DESENHANDO PONTO: " + vertices[i].x + ", " + vertices[i].y + ", " + vertices[i].z);
         }
         g.drawLine(vertices[this.nVertices - 1].x, vertices[this.nVertices - 1].y, vertices[0].x, vertices[0].y);
-
+        System.out.println("DESENHANDO PONTO: " + vertices[this.nVertices - 1].x + ", " + vertices[this.nVertices - 1].y + ", " + vertices[this.nVertices - 1].z);
     }
 
     public void fill(Graphics g) {
