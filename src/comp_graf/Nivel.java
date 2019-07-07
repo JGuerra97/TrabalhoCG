@@ -1,6 +1,7 @@
 package comp_graf;
 
 import java.awt.Graphics;
+import java.util.ArrayList;
 import java.util.Scanner;
 import javax.swing.*;
 
@@ -63,6 +64,7 @@ public class Nivel extends JPanel {
                 //aviao.rotacaoPlanoYZ(-36.25, 0, 0, 0);
                 //aviao.rotacaoPlanoXZ(150, 0, 0, 0);
                 //aviao.rotacaoQuaternio(0, 0, 1, 0);
+                /*
                 Scanner teclado = new Scanner(System.in);
 
                 System.out.println("Defina o eixo de rotação:");
@@ -92,12 +94,29 @@ public class Nivel extends JPanel {
                 g.drawLine(x1, y1, x2, y2);
                 double norma = Math.sqrt((x2 - x1) * (x2 - x1) + (y2 - y1) * (y2 - y1) + (z2 - z1) * (z2 - z1));
                 System.out.println("NORMA: " + norma);
-                aviao.rotacaoQuaternio(angulo, (int)((x2 - x1) / norma), (int)((y2 - y1) / norma), (int)((z2 - z1) / norma));
+                aviao.rotacaoQuaternio(angulo, (int) ((x2 - x1) / norma), (int) ((y2 - y1) / norma), (int) ((z2 - z1) / norma));
                 aviao.desenhar(g);
-                /*for(int i=0; i<50; i++){
+                 */
+ /*for(int i=0; i<50; i++){
                aviao.desenhar(g);
                aviao.rotacaoQuaternio(angulo/50, x2-x1, y2-y1, z2-z1);
                }*/
+                Tuple3d[] pontosBezier = new Tuple3d[4];
+
+                pontosBezier[0] = new Tuple3d(100, 300, 0);
+                pontosBezier[1] = new Tuple3d(300, 150, 0);
+                pontosBezier[2] = new Tuple3d(800, 100, 0);
+                pontosBezier[3] = new Tuple3d(1000, 300, 0);
+
+                g.drawLine((int) pontosBezier[0].x, (int) pontosBezier[0].y, (int) pontosBezier[1].x, (int) pontosBezier[1].y);
+                g.drawLine((int) pontosBezier[1].x, (int) pontosBezier[1].y, (int) pontosBezier[2].x, (int) pontosBezier[2].y);
+                g.drawLine((int) pontosBezier[2].x, (int) pontosBezier[2].y, (int) pontosBezier[3].x, (int) pontosBezier[3].y);
+                CurvaBezier curva = new CurvaBezier();
+                Tuple3d[] resultadoBezier = curva.getCurvePoints(pontosBezier, 0.0001);
+                System.out.println(resultadoBezier.length);
+                for (int i = 0; i < 10000; i++) {
+                    g.drawLine((int) resultadoBezier[i].x, (int) resultadoBezier[i].y, (int) resultadoBezier[i + 1].x, (int) resultadoBezier[i + 1].y);
+                }
 
                 break;
 
