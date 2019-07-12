@@ -2,15 +2,17 @@ package comp_graf;
 
 public class Tuple3d {
 
-    public final double x;
+    public double x;
 
-    public final double y;
+    public double y;
 
-    public final double z;
+    public double z;
 
     /**
      *
-     * Constructs a new Tuple class.      *
+     * Constructs a new Tuple class.
+     *
+     *
      * @param x
      *
      * @param y

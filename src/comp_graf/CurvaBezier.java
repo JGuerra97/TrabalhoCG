@@ -22,7 +22,7 @@ public class CurvaBezier {
 
         if (detail > 1 || detail < 0) {
 
-            throw new IllegalStateException("");
+            throw new IllegalStateException("Parâmetro inválido");
 
         }
 
@@ -30,23 +30,26 @@ public class CurvaBezier {
 
         ArrayList<Tuple3d> controlPoints = new ArrayList<Tuple3d>();
 
+        controlPoints.add(controls[0]);
+        controlPoints.add(controls[1]);
+        controlPoints.add(controls[2]);
+        controlPoints.add(controls[3]);
+
         //generate the end and control points
-        for (int i = 1; i < controls.length - 1; i += 2) {
+        /* for (int i = 0; i < controls.length - 1; i += 2) {
 
-            controlPoints.add(center(controls[i - 1], controls[i]));
-
+            //controlPoints.add(center(controls[i - 1], controls[i]));
             controlPoints.add(controls[i]);
 
             controlPoints.add(controls[i + 1]);
 
             if (i + 2 < controls.length - 1) {
 
-                controlPoints.add(center(controls[i + 1], controls[i + 2]));
+                controlPoints.add(controls[i + 2]);
 
             }
 
-        }
-
+        } */
         //Generate the detailed points.
         Tuple3d a0, a1, a2, a3;
 

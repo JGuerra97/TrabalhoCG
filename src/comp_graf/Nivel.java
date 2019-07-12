@@ -101,25 +101,20 @@ public class Nivel extends JPanel {
                aviao.desenhar(g);
                aviao.rotacaoQuaternio(angulo/50, x2-x1, y2-y1, z2-z1);
                }*/
-                Tuple3d[] pontosBezier = new Tuple3d[5];
+                Tuple3d[] pontosBezier = new Tuple3d[4];
 
                 for (int i = 0; i < 4; i++) {
                     System.out.println("Defina os valores x, y e z do ponto " + i);
                     pontosBezier[i] = new Tuple3d(teclado.nextInt(), teclado.nextInt(), teclado.nextInt()); //Pedindo ao usuário os 4 pontos da curva
                 }
-                pontosBezier[4] = new Tuple3d(100, 500, 0);//Ponto Fantasma
-
                 /*
-                pontosBezier[0] = new Tuple3d(0, 300, 0);
-                pontosBezier[1] = new Tuple3d(300, 120, 0);
-                pontosBezier[2] = new Tuple3d(500, 100, 0);
-                pontosBezier[3] = new Tuple3d(1200, 300, 0);
-                g.drawLine((int) (pontosBezier[1].x + pontosBezier[0].x) / 2, (int) (pontosBezier[1].y + pontosBezier[0].y) / 2, (int) pontosBezier[1].x, (int) pontosBezier[1].y);
+                g.drawLine((int) pontosBezier[0].x, (int) pontosBezier[0].y, (int) pontosBezier[1].x, (int) pontosBezier[1].y);
                 g.drawLine((int) pontosBezier[1].x, (int) pontosBezier[1].y, (int) pontosBezier[2].x, (int) pontosBezier[2].y);
-                g.drawLine((int) pontosBezier[2].x, (int) pontosBezier[2].y, (int) (pontosBezier[3].x + pontosBezier[2].x) / 2, (int) (pontosBezier[3].y + pontosBezier[2].y) / 2);
+                g.drawLine((int) pontosBezier[2].x, (int) pontosBezier[2].y, (int) pontosBezier[3].x, (int) pontosBezier[3].y);
                  */
                 CurvaBezier curva = new CurvaBezier();
-                double t = 0.001;   //Definição do parâmetro da curva
+                double t = 0.01;   //Definição do parâmetro da curva
+
                 Tuple3d[] resultadoBezier = curva.getCurvePoints(pontosBezier, t);  //Envio dos pontos definidos pelo usuário e retorno dos pontos a ser desenhados em um vetor de Tuple3D
                 for (int i = 0; i < (1 / t) - 1; i++) {
                     g.drawLine((int) resultadoBezier[i].x, (int) resultadoBezier[i].y, (int) resultadoBezier[i + 1].x, (int) resultadoBezier[i + 1].y); // desenhando a curva em relação ao parametro t
