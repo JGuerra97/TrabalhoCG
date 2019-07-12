@@ -176,9 +176,11 @@ public class Face {
         Quaternio q_conjugado;
         q_conjugado = q.calculaConjugado(q);
         double rq0, rq1, rq2, rq3;
-        double[] prodVet = calculaProdutoVetorial(q.getQ1(), q.getQ2(), q.getQ3(), referenciax, referenciay, referenciaz);
         // Fazer a multiplicação  q p q*
-
+        double[] multiplicacao_qp = multqp(q.getQ0(), q.getQ1(), q.getQ2(), q.getQ3(), 0, referenciax, referenciay, referenciaz);
+        double[] multiplicacao_qpq_conj = multqp(multiplicacao_qp[0], multiplicacao_qp[1], multiplicacao_qp[2], multiplicacao_qp[3], q_conjugado.getQ0(), q_conjugado.getQ1(), q_conjugado.getQ2(), q_conjugado.getQ3());
+        /*
+        double[] prodVet = calculaProdutoVetorial(q.getQ1(), q.getQ2(), q.getQ3(), referenciax, referenciay, referenciaz);
         rq0 = 0;
         //System.out.println("XXXXXXXXX "+referenciax+" "+ q.getQ0());
         rq1 = q.getQ0() * q.getQ0() * referenciax - (calculaProdutoInterno(q.getQ1(), q.getQ2(), q.getQ3(), q.getQ1(), q.getQ2(), q.getQ3())) * referenciax
@@ -192,8 +194,19 @@ public class Face {
         rq3 = q.getQ0() * q.getQ0() * referenciaz - (calculaProdutoInterno(q.getQ1(), q.getQ2(), q.getQ3(), q.getQ1(), q.getQ2(), q.getQ3())) * referenciaz
                 + 2 * (calculaProdutoInterno(q.getQ1(), q.getQ2(), q.getQ3(), referenciax, referenciay, referenciaz)) * q.getQ3()
                 + 2 * q.getQ0() * prodVet[2];
+         */
 
-        return new int[]{(int) rq1, (int) rq2, (int) rq3};
+        return new int[]{(int) multiplicacao_qpq_conj[1], (int) multiplicacao_qpq_conj[2], (int) multiplicacao_qpq_conj[3]};
+    }
+
+    public double[] multqp(double p0, double p1, double p2, double p3, double q0, double q1, double q2, double q3) {
+        double[] resp = new double[4];
+        resp[0] = p0 * q0 - p1 * q1 - p2 * q2 - p3 * q3;
+        resp[1] = p0 * q1 + q0 * p1 + p2 * q3 - p3 * q2;
+        resp[2] = p0 * q2 + q0 * p2 + p3 * q1 - p1 * q3;
+        resp[3] = p0 * q3 + q0 * p3 + p1 * q2 - p2 * q1;
+
+        return resp;
     }
 
     public void rotacaoQuaternio(double angulo, int nx, int ny, int nz) {

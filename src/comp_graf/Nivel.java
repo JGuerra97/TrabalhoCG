@@ -66,7 +66,6 @@ public class Nivel extends JPanel {
                 //aviao.rotacaoPlanoXZ(150, 0, 0, 0);
                 //aviao.rotacaoQuaternio(0, 0, 1, 0);
 
-                /*
                 System.out.println("Defina o eixo de rotação:");
                 int x1,
                  x2,
@@ -92,26 +91,26 @@ public class Nivel extends JPanel {
                 angulo = teclado.nextDouble();
 
                 g.drawLine(x1, y1, x2, y2);
+
                 double norma = Math.sqrt((x2 - x1) * (x2 - x1) + (y2 - y1) * (y2 - y1) + (z2 - z1) * (z2 - z1));
-                System.out.println("NORMA: " + norma);
                 aviao.rotacaoQuaternio(angulo, (int) ((x2 - x1) / norma), (int) ((y2 - y1) / norma), (int) ((z2 - z1) / norma));
                 aviao.desenhar(g);
-                 */
- /*for(int i=0; i<50; i++){
-               aviao.desenhar(g);
-               aviao.rotacaoQuaternio(angulo/50, x2-x1, y2-y1, z2-z1);
-               }*/
+
+                //  for(int i=0; i<50; i++){
+                //    aviao.desenhar(g);
+                //    aviao.rotacaoQuaternio(angulo/50, x2-x1, y2-y1, z2-z1);
+                //  }
+                /*
                 Tuple3d[] pontosBezier = new Tuple3d[4];
 
                 for (int i = 0; i < 4; i++) {
                     System.out.println("Defina os valores x, y e z do ponto " + i);
                     pontosBezier[i] = new Tuple3d(teclado.nextInt(), teclado.nextInt(), teclado.nextInt()); //Pedindo ao usuário os 4 pontos da curva
                 }
-                /*
-                g.drawLine((int) pontosBezier[0].x, (int) pontosBezier[0].y, (int) pontosBezier[1].x, (int) pontosBezier[1].y);
-                g.drawLine((int) pontosBezier[1].x, (int) pontosBezier[1].y, (int) pontosBezier[2].x, (int) pontosBezier[2].y);
-                g.drawLine((int) pontosBezier[2].x, (int) pontosBezier[2].y, (int) pontosBezier[3].x, (int) pontosBezier[3].y);
-                 */
+
+                //g.drawLine((int) pontosBezier[0].x, (int) pontosBezier[0].y, (int) pontosBezier[1].x, (int) pontosBezier[1].y);
+                //g.drawLine((int) pontosBezier[1].x, (int) pontosBezier[1].y, (int) pontosBezier[2].x, (int) pontosBezier[2].y);
+                //g.drawLine((int) pontosBezier[2].x, (int) pontosBezier[2].y, (int) pontosBezier[3].x, (int) pontosBezier[3].y);
                 CurvaBezier curva = new CurvaBezier();
                 double t = 0.01;   //Definição do parâmetro da curva
 
@@ -119,7 +118,7 @@ public class Nivel extends JPanel {
                 for (int i = 0; i < (1 / t) - 1; i++) {
                     g.drawLine((int) resultadoBezier[i].x, (int) resultadoBezier[i].y, (int) resultadoBezier[i + 1].x, (int) resultadoBezier[i + 1].y); // desenhando a curva em relação ao parametro t
                 }
-
+                 */
                 break;
 
             case 1:
