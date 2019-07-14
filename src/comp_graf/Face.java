@@ -42,6 +42,7 @@ public class Face {
                 }
             }
         }
+        matrizTransformacao = resultado;
     }
 
     public void transformar() {
