@@ -57,7 +57,6 @@ public class Nivel extends JPanel {
         switch (fase) {
 
             case 0:
-                System.out.println("-----------------------------------------FASE 0--------------------------------------");
 
                 Scanner teclado = new Scanner(System.in);
                 //aviao.rotacaoPlanoYZ(-36.25, 0, 0, 0);
@@ -123,7 +122,6 @@ public class Nivel extends JPanel {
                 break;
 
             case 1:
-                System.out.println("-----------------------------------------FASE 1--------------------------------------");
 
                 // Primeira Linha
                 quadrado.translacao(105, 90, 0);

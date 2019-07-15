@@ -214,11 +214,9 @@ public class Face {
     public void rotacaoQuaternio(double angulo, double nx, double ny, double nz) {
         for (int i = 0; i < nVertices; i++) {
             int[] temp = rotacaoPontoQuaternio(vertices[i].x, vertices[i].y, vertices[i].z, nx, ny, nz, angulo);
-            System.out.println("PONTO ANTES: (" + vertices[i].x + ", " + vertices[i].y + ", " + vertices[i].z + ")");
             vertices[i].x = temp[0];
             vertices[i].y = temp[1];
             vertices[i].z = temp[2];
-            System.out.println("PONTO DEPOIS: (" + vertices[i].x + ", " + vertices[i].y + ", " + vertices[i].z + ")");
         }
     }
 
@@ -226,7 +224,6 @@ public class Face {
 
         translacao(referenciax, 0, 0);
 
-        System.out.println("Reflexão X:");
         mudaMatrizTransformacao(new double[][]{{-1, 0, 0, 0},
         {0, 1, 0, 0},
         {0, 0, 1, 0},
@@ -239,7 +236,6 @@ public class Face {
 
         translacao(0, referenciay, 0);
 
-        System.out.println("Reflexão Y:");
         mudaMatrizTransformacao(new double[][]{{1, 0, 0, 0},
         {0, -1, 0, 0},
         {0, 0, 1, 0},
@@ -252,7 +248,6 @@ public class Face {
 
         translacao(0, 0, referenciaz);
 
-        System.out.println("Reflexão Z:");
         mudaMatrizTransformacao(new double[][]{{1, 0, 0, 0},
         {0, 1, 0, 0},
         {0, 0, -1, 0},
@@ -266,10 +261,8 @@ public class Face {
         g.setColor(Color.black);
         for (int i = 0; i < this.nVertices - 1; i++) {
             g.drawLine(vertices[i].x, vertices[i].y, vertices[i + 1].x, vertices[i + 1].y);
-            System.out.println("DESENHANDO: (" + vertices[i].x + ", " + vertices[i].y + ", " + vertices[i].z + ")");
         }
         g.drawLine(vertices[this.nVertices - 1].x, vertices[this.nVertices - 1].y, vertices[0].x, vertices[0].y);
-        System.out.println("DESENHANDO: (" + vertices[this.nVertices - 1].x + ", " + vertices[this.nVertices - 1].y + ", " + vertices[this.nVertices - 1].z + ")");
     }
 
     public void fill(Graphics g) {
