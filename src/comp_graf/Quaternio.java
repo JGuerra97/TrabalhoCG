@@ -2,18 +2,12 @@ package comp_graf;
 
 public class Quaternio {
 
-    private int nx, ny, nz;
-    double angulo;
     private double q0;
     private double q1;
     private double q2;
     private double q3;
 
-    public Quaternio(int nx, int ny, int nz, double angulo) {
-        this.nx = nx;
-        this.ny = ny;
-        this.nz = nz;
-        this.angulo = angulo;
+    public Quaternio(double nx, double ny, double nz, double angulo) {
         double seno = Math.sin(Math.toRadians(angulo / 2));
         double cosseno = Math.cos(Math.toRadians(angulo / 2));
         q0 = cosseno;

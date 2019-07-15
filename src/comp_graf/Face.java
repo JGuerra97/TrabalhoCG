@@ -161,17 +161,17 @@ public class Face {
         translacao(-referenciax, -referenciay, -referenciaz);
     }
 
-    private double calculaProdutoInterno(double v1x, double v1y, double v1z, double v2x, double v2y, double v2z) {
+    private double prodInterno(double v1x, double v1y, double v1z, double v2x, double v2y, double v2z) {
 
         return v1x * v2x + v1y * v2y + v1z * v2z;
     }
 
-    private double[] calculaProdutoVetorial(double v1x, double v1y, double v1z, double v2x, double v2y, double v2z) {
+    private double[] prodVetorial(double v1x, double v1y, double v1z, double v2x, double v2y, double v2z) {
 
         return new double[]{v1y * v2z - v1z * v2y, v1z * v2x - v1x * v2z, v1x * v2y - v1y * v2z};
     }
 
-    public int[] rotacaoPontoQuaternio(int referenciax, int referenciay, int referenciaz, int nx, int ny, int nz, double angulo) {
+    public int[] rotacaoPontoQuaternio(int referenciax, int referenciay, int referenciaz, double nx, double ny, double nz, double angulo) {
 
         Quaternio q = new Quaternio(nx, ny, nz, angulo);
         Quaternio q_conjugado;
@@ -202,22 +202,23 @@ public class Face {
 
     public double[] multqp(double p0, double p1, double p2, double p3, double q0, double q1, double q2, double q3) {
         double[] resp = new double[4];
-        resp[0] = p0 * q0 - p1 * q1 - p2 * q2 - p3 * q3;
-        resp[1] = p0 * q1 + q0 * p1 + p2 * q3 - p3 * q2;
-        resp[2] = p0 * q2 + q0 * p2 + p3 * q1 - p1 * q3;
-        resp[3] = p0 * q3 + q0 * p3 + p1 * q2 - p2 * q1;
+        double[] pxq = prodVetorial(p1, p2, p1, q1, q2, q3);
+        resp[0] = (p0 * q0) - prodInterno(p1, p2, p3, q1, q2, q3);
+        resp[1] = (p0 * q1) + (q0 * p1) + pxq[0];
+        resp[2] = (p0 * q2) + (q0 * p2) + pxq[1];
+        resp[3] = (p0 * q3) + (q0 * p3) + pxq[2];
 
         return resp;
     }
 
-    public void rotacaoQuaternio(double angulo, int nx, int ny, int nz) {
+    public void rotacaoQuaternio(double angulo, double nx, double ny, double nz) {
         for (int i = 0; i < nVertices; i++) {
             int[] temp = rotacaoPontoQuaternio(vertices[i].x, vertices[i].y, vertices[i].z, nx, ny, nz, angulo);
-            System.out.println("PONTO ANTES: " + vertices[i].x + ", " + vertices[i].y + ", " + vertices[i].z);
+            System.out.println("PONTO ANTES: (" + vertices[i].x + ", " + vertices[i].y + ", " + vertices[i].z + ")");
             vertices[i].x = temp[0];
             vertices[i].y = temp[1];
             vertices[i].z = temp[2];
-            System.out.println("PONTO DEPOIS: " + vertices[i].x + ", " + vertices[i].y + ", " + vertices[i].z);
+            System.out.println("PONTO DEPOIS: (" + vertices[i].x + ", " + vertices[i].y + ", " + vertices[i].z + ")");
         }
     }
 
@@ -265,10 +266,10 @@ public class Face {
         g.setColor(Color.black);
         for (int i = 0; i < this.nVertices - 1; i++) {
             g.drawLine(vertices[i].x, vertices[i].y, vertices[i + 1].x, vertices[i + 1].y);
-            System.out.println("DESENHANDO PONTO: " + vertices[i].x + ", " + vertices[i].y + ", " + vertices[i].z);
+            System.out.println("DESENHANDO: (" + vertices[i].x + ", " + vertices[i].y + ", " + vertices[i].z + ")");
         }
         g.drawLine(vertices[this.nVertices - 1].x, vertices[this.nVertices - 1].y, vertices[0].x, vertices[0].y);
-        System.out.println("DESENHANDO PONTO: " + vertices[this.nVertices - 1].x + ", " + vertices[this.nVertices - 1].y + ", " + vertices[this.nVertices - 1].z);
+        System.out.println("DESENHANDO: (" + vertices[this.nVertices - 1].x + ", " + vertices[this.nVertices - 1].y + ", " + vertices[this.nVertices - 1].z + ")");
     }
 
     public void fill(Graphics g) {

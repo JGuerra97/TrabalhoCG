@@ -59,20 +59,13 @@ public class Nivel extends JPanel {
             case 0:
                 System.out.println("-----------------------------------------FASE 0--------------------------------------");
 
-                aviao.translacao(350, 350, 0);
-                aviao.transformar();
                 Scanner teclado = new Scanner(System.in);
                 //aviao.rotacaoPlanoYZ(-36.25, 0, 0, 0);
                 //aviao.rotacaoPlanoXZ(150, 0, 0, 0);
                 //aviao.rotacaoQuaternio(0, 0, 1, 0);
 
                 System.out.println("Defina o eixo de rotação:");
-                int x1,
-                 x2,
-                 y1,
-                 y2,
-                 z1,
-                 z2;
+                int x, y, z, x1, x2, y1, y2, z1, z2;
                 double angulo;
 
                 System.out.println("Valor de x1:");
@@ -89,11 +82,19 @@ public class Nivel extends JPanel {
                 z2 = teclado.nextInt();
                 System.out.println("Valor do angulo:");
                 angulo = teclado.nextDouble();
+                
+                x = x2-x1;
+                y = y2-y1;
+                z = z2-z1;
+                
+                
 
                 g.drawLine(x1, y1, x2, y2);
 
-                double norma = Math.sqrt((x2 - x1) * (x2 - x1) + (y2 - y1) * (y2 - y1) + (z2 - z1) * (z2 - z1));
-                aviao.rotacaoQuaternio(angulo, (int) ((x2 - x1) / norma), (int) ((y2 - y1) / norma), (int) ((z2 - z1) / norma));
+                double norma = Math.sqrt(Math.pow(x, 2) + Math.pow(y, 2) + Math.pow(z, 2));
+                aviao.translacao(350, 350, 0);
+                aviao.transformar();
+                aviao.rotacaoQuaternio(angulo, x/norma, y/norma, z/norma);
                 aviao.desenhar(g);
 
                 //  for(int i=0; i<50; i++){

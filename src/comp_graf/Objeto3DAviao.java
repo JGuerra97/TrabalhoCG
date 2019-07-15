@@ -87,7 +87,7 @@ public class Objeto3DAviao {
         }
     }
     
-    public void rotacaoQuaternio(double angulo, int nx, int ny, int nz){
+    public void rotacaoQuaternio(double angulo, double nx, double ny, double nz){
         for(Face f : faces){
             f.rotacaoQuaternio(angulo, nx, ny, nz);
         }
