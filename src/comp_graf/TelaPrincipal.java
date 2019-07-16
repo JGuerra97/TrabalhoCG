@@ -74,6 +74,7 @@ public class TelaPrincipal extends JFrame {
                 fase1();       //fase 1
             }
         });
+
     }
 
     public void fase1() { // Resposta A

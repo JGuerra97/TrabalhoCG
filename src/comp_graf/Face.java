@@ -11,6 +11,7 @@ import java.util.Arrays;
 
 public class Face {
 
+    protected boolean isVisible;
     protected final int nVertices;
     protected Vertice[] vertices;
     protected double[][] matrizTransformacao = {{1, 0, 0, 0},
@@ -265,10 +266,42 @@ public class Face {
         g.drawLine(vertices[this.nVertices - 1].x, vertices[this.nVertices - 1].y, vertices[0].x, vertices[0].y);
     }
 
-    public void fill(Graphics g) {
+    public static Color getShade(Color color, double shade) {
+        double redLinear = Math.pow(color.getRed(), 2.4) * shade;
+        double greenLinear = Math.pow(color.getGreen(), 2.4) * shade;
+        double blueLinear = Math.pow(color.getBlue(), 2.4) * shade;
 
+        int red = (int) Math.pow(redLinear, 1 / 2.4);
+        int green = (int) Math.pow(greenLinear, 1 / 2.4);
+        int blue = (int) Math.pow(blueLinear, 1 / 2.4);
+
+        return new Color(red, green, blue);
+    }
+
+    public void fill(Graphics g, Color cor) {
+
+        int[] v1 = new int[3];
+        int[] v2 = new int[3];
+        double[] normal = new double[3];
+
+        v1[0] = this.vertices[1].x - this.vertices[0].x;
+        v1[1] = this.vertices[1].y - this.vertices[0].y;
+        v1[2] = this.vertices[1].z - this.vertices[0].z;
+
+        v2[0] = this.vertices[2].x - this.vertices[1].x;
+        v2[1] = this.vertices[2].y - this.vertices[1].y;
+        v2[2] = this.vertices[2].z - this.vertices[1].z;
+
+        normal[0] = v1[1] * v2[2] - v1[2] * v2[1];
+        normal[1] = v1[2] * v2[0] - v1[0] * v2[2];
+        normal[2] = v1[0] * v2[1] - v1[1] * v2[0];
+
+        double norma = Math.sqrt(Math.pow(normal[0], 2) + Math.pow(normal[1], 2) + Math.pow(normal[2], 2));
+        normal[0] = (normal[0] / norma);
+        normal[1] = (normal[1] / norma);
+        normal[2] = (normal[2] / norma);
         transformar();
-        g.setColor(Color.red);
+        g.setColor(cor);
 
         int[] x = new int[nVertices];
         int[] y = new int[nVertices];

@@ -64,7 +64,15 @@ public class Nivel extends JPanel {
                 //aviao.rotacaoQuaternio(0, 0, 1, 0);
 
                 System.out.println("Defina o eixo de rotação:");
-                int x, y, z, x1, x2, y1, y2, z1, z2;
+                int x,
+                 y,
+                 z,
+                 x1,
+                 x2,
+                 y1,
+                 y2,
+                 z1,
+                 z2;
                 double angulo;
 
                 System.out.println("Valor de x1:");
@@ -81,19 +89,17 @@ public class Nivel extends JPanel {
                 z2 = teclado.nextInt();
                 System.out.println("Valor do angulo:");
                 angulo = teclado.nextDouble();
-                
-                x = x2-x1;
-                y = y2-y1;
-                z = z2-z1;
-                
-                
+
+                x = x2 - x1;
+                y = y2 - y1;
+                z = z2 - z1;
 
                 g.drawLine(x1, y1, x2, y2);
 
                 double norma = Math.sqrt(Math.pow(x, 2) + Math.pow(y, 2) + Math.pow(z, 2));
                 aviao.translacao(350, 350, 0);
                 aviao.transformar();
-                aviao.rotacaoQuaternio(angulo, x/norma, y/norma, z/norma);
+                aviao.rotacaoQuaternio(angulo, x / norma, y / norma, z / norma);
                 aviao.desenhar(g);
 
                 //  for(int i=0; i<50; i++){
@@ -569,9 +575,10 @@ public class Nivel extends JPanel {
             case 9:
 
                 aviao.translacao(350, 350, 0);
-                aviao.rotacaoPlanoYZ(-35.26, 0, 0, 0);
-                aviao.rotacaoPlanoXZ(45, 0, 0, 0);
-                aviao.desenhar(g);
+                aviao.rotacaoPlanoYZ(20, 0, 0, 0);
+                aviao.rotacaoPlanoXZ(15, 0, 0, 0);
+                aviao.rotacaoPlanoXY(10, 0, 0, 0);
+                aviao.desenharSolido(g);
                 break;
 
             default:
